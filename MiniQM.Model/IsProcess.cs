@@ -11,7 +11,9 @@ namespace MiniQM.Model
     {
         [Display(Name = "Süreç Değil")]
         NotProcess = 0,
+        [Display(Name = "Süreç")]
         Process = 1,
+        [Display(Name = "Tümü")]
         All = 2
     }
 }

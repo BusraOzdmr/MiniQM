@@ -55,13 +55,19 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ApplicationUser.cs" />
+    <Compile Include="AQL.cs" />
     <Compile Include="BaseEntity.cs" />
     <Compile Include="Company.cs" />
+    <Compile Include="Criterion.cs" />
     <Compile Include="Facility.cs" />
     <Compile Include="IsProcess.cs" />
+    <Compile Include="Level.cs" />
     <Compile Include="Material.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="QualityCertificateSamplePlan.cs" />
     <Compile Include="QualityPlan.cs" />
+    <Compile Include="Unit.cs" />
+    <Compile Include="UnitCategory.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

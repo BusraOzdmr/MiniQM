@@ -26,7 +26,9 @@ namespace MiniQM.Model
         [Required]
         public int MaterialId{ get; set; }
         public Material Material { get; set; }
-
+        [Display(Name = "Kriter")]
+        [Required]
+        public Criterion Criterion { get; set; }
         [Display(Name = "Açıklama")]
         [MaxLength(4000)]
         [DataType(DataType.MultilineText)]
@@ -37,7 +39,7 @@ namespace MiniQM.Model
 
         [Display(Name = "Süreç mi?")]
         public IsProcess? IsProcess { get; set; }
-
+        
 
     }
 }

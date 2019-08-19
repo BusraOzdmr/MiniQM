@@ -7,13 +7,17 @@ using System.Threading.Tasks;
 
 namespace MiniQM.Model
 {
-    public class Facility:BaseEntity //Tesis
+    public enum Level
     {
-        [Display(Name = "Ad")]
+        [Display(Name = "Düşük")]
         [Required]
-        public string Name { get; set; }
-        [Display(Name = "Bağlı Olduğu Firma")]
+        Reduced = 0,
+        [Display(Name = "Normal")]
         [Required]
-        public Company Company { get; set; }
+        Normal = 1,
+        [Display(Name = "Yüksek")]
+        [Required]
+        Intensive = 2
+
     }
 }
