@@ -6,9 +6,8 @@ using System.Threading.Tasks;
 
 namespace MiniQM.Model
 {
-    public class Material //Malzeme
-    {
-        public int Id { get; set; }
+    public class Material:BaseEntity //Malzeme
+    {      
         public string Name { get; set; }
         public int Index { get; set; }
     }
