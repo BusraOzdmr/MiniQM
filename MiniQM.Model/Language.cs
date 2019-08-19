@@ -7,13 +7,11 @@ using System.Threading.Tasks;
 
 namespace MiniQM.Model
 {
-    public class Company:BaseEntity //Firma
+    public class Language:BaseEntity
     {
-        [Display(Name = "Ad")]
-        [Required]
+        [Display(Name = "Dil")]
         public string Name { get; set; }
-        public virtual ICollection<Facility> Facilities { get; set; }
-        public virtual ICollection<Department> Departments { get; set; }
-
+        [Display(Name = "Dil Kodu")]
+        public string Code { get; set; }
     }
 }

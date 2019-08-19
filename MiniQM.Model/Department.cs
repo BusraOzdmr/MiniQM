@@ -7,15 +7,20 @@ using System.Threading.Tasks;
 
 namespace MiniQM.Model
 {
-    public class Facility:BaseEntity //Tesis
+    public class Department
     {
-        [Display(Name = "Ad")]
+        [Display(Name="Bölüm")]
         [Required]
         public string Name { get; set; }
-        [Display(Name = "Bağlı Olduğu Firma")]
+        [Display(Name = "Firma")]
         [Required]
         public int CompanyId { get; set; }
         public Company Company { get; set; }
-        public virtual ICollection<Department> Departments { get; set; }
+        [Display(Name = "Tesis")]
+        [Required]
+        public int FacilityId { get; set; }
+        public Facility Facility { get; set; }
+
+        public virtual ICollection<Position> Positions { get; set; }
     }
 }
