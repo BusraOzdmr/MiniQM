@@ -13,13 +13,13 @@ namespace MiniQM.Model
         [Required]
         public string Name { get; set; }
         [Display(Name = "Firma")]
-        [Required]
-        public int CompanyId { get; set; }
+        
+        public int? CompanyId { get; set; }
         public string CompanyName { get; set; }
         public virtual Company Company { get; set; }
         [Display(Name = "Tesis")]
-        [Required]
-        public int FacilityId { get; set; }
+        
+        public int? FacilityId { get; set; }
         public string FacilityName { get; set; }
         public virtual Facility Facility { get; set; }
 

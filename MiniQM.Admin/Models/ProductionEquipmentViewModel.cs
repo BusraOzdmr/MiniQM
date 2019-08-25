@@ -14,13 +14,13 @@ namespace MiniQM.Admin.Models
         [Display(Name = "Dil")]
         public string LanguageCode { get; set; }
         [Display(Name = "Firma")]
-        [Required]
-        public int CompanyId { get; set; }
+        
+        public int? CompanyId { get; set; }
         [Display(Name = "Firma")]
         public string CompanyName { get; set; }
         [Display(Name = "Tesis")]
-        [Required]
-        public int FacilityId { get; set; }
+        
+        public int? FacilityId { get; set; }
         [Display(Name = "Tesis")]
         public string FacilityName { get; set; }
         [Display(Name = "Araç ve Gereç")]

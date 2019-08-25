@@ -10,10 +10,10 @@ namespace MiniQM.Model
     public class ChangeQualityPlan:BaseEntity
     {
         [Display(Name="Kalite Planı")]
-        public int QualityPlanId { get; set; }
+        public int? QualityPlanId { get; set; }
         public virtual QualityPlan QualityPlan { get; set; }
         [Display(Name = "Malzeme İndeksi")]
-        public int MaterialId { get; set; }
+        public int? MaterialId { get; set; }
         public virtual Material Material { get; set; }
         [Display(Name = "Kriter")]
         public int CriterionId { get; set; }

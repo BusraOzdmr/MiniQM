@@ -13,8 +13,8 @@ namespace MiniQM.Model
         [Required]
         public string Name { get; set; }
         [Display(Name = "Bağlı Olduğu Firma")]
-        [Required]
-        public int CompanyId { get; set; }
+        
+        public int? CompanyId { get; set; }
         public virtual Company Company { get; set; }
         public virtual ICollection<QualityPlan> QualityPlans { get; set; }
         public virtual ICollection<Department> Departments { get; set; }

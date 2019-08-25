@@ -29,16 +29,16 @@ namespace MiniQM.Model
         [Required]
         public string Email { get; set; }
         [Display(Name = "Firma")]
-        [Required]
-        public int CompanyId { get; set; }
+        
+        public int? CompanyId { get; set; }
         public Company Company { get; set; }
         [Display(Name = "Bölüm")]
-        [Required]
-        public int DepartmentId { get; set; }
+        
+        public int? DepartmentId { get; set; }
         public Department Department { get; set; }
         [Display(Name = "Pozisyon")]
-        [Required]
-        public int PositionId { get; set; }
+        
+        public int? PositionId { get; set; }
         public Position Position { get; set; }
         [Display(Name = "Profil")]
         [Required]

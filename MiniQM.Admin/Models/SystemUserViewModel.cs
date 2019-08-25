@@ -31,20 +31,20 @@ namespace MiniQM.Admin.Models
         public string Email { get; set; }
         
         [Display(Name = "Firma")]
-        [Required]
-        public int CompanyId { get; set; }
+        
+        public int? CompanyId { get; set; }
         [Display(Name = "Firma")]
         public string CompanyName { get; set; }
         
         [Display(Name = "Bölüm")]
-        [Required]
-        public int DepartmentId { get; set; }
+        
+        public int? DepartmentId { get; set; }
         [Display(Name = "Bölüm")]
         public string DepartmentName { get; set; }
         
         [Display(Name = "Pozisyon")]
-        [Required]
-        public int PositionId { get; set; }
+        
+        public int? PositionId { get; set; }
         [Display(Name = "Pozisyon")]
         public string PositionName { get; set; }
         [Display(Name = "Profil")]

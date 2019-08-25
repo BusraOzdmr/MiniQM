@@ -13,8 +13,8 @@ namespace MiniQM.Admin.Models
         [Required]
         public string Name { get; set; }
         [Display(Name = "Bağlı Olduğu Firma")]
-        [Required]
-        public int CompanyId { get; set; }
+        
+        public int? CompanyId { get; set; }
 
         [Display(Name = "Bağlı Olduğu Firma")]
         public string CompanyName { get; set; }

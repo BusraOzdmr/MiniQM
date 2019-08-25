@@ -10,18 +10,18 @@ namespace MiniQM.Model
     public class QualityPlan:BaseEntity // Kalite Planı
     {        
         [Display(Name = "Firma")]
-        [Required]
-        public int CompanyId { get; set; }
+        
+        public int? CompanyId { get; set; }
         public virtual Company Company { get; set; }
 
         [Display(Name = "Tesis")]
-        [Required]
-        public int FacilityId { get; set; }
+        
+        public int? FacilityId { get; set; }
         public virtual Facility Facility { get; set; }
 
         [Display(Name = "Malzeme")]
-        [Required]
-        public int MaterialId{ get; set; }
+        
+        public int? MaterialId{ get; set; }
         public virtual Material Material { get; set; }
         
         [Display(Name = "Açıklama")]

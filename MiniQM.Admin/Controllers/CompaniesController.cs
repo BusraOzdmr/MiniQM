@@ -8,17 +8,23 @@ using System.Web;
 using System.Web.Mvc;
 using MiniQM.Data;
 using MiniQM.Model;
+using MiniQM.Service;
 
 namespace MiniQM.Admin.Controllers
 {
     public class CompaniesController : Controller
     {
-        private ApplicationDbContext db = new ApplicationDbContext();
+        private readonly ICompanyService companyService;
 
+        public CompaniesController(ICompanyService companyService)
+        {
+            this.companyService = companyService;
+        }
         // GET: Companies
         public ActionResult Index()
         {
-            return View(db.Companies.ToList());
+            var companies = companyService.GetAll();
+
         }
 
         // GET: Companies/Details/5

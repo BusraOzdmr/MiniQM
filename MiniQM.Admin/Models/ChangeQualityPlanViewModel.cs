@@ -11,15 +11,15 @@ namespace MiniQM.Admin.Models
     {
         public int Id { get; set; }
         [Display(Name = "Kalite Planı")]
-        [Required]
-        public int QualityPlanId { get; set; }
+        
+        public int? QualityPlanId { get; set; }
         public string QualityPlanName { get; set; }
         [Display(Name = "Malzeme İndeksi")]
-        public int MaterialId { get; set; }
+        public int? MaterialId { get; set; }
         [Display(Name = "Malzeme İndeksi")]
         public int MaterialIndex { get; set; }
         [Display(Name = "Kriter")]
-        public int CriterionId { get; set; }
+        public int? CriterionId { get; set; }
         [Display(Name = "Kriter")]
         public string CriterionName { get; set; }
         
@@ -46,6 +46,8 @@ namespace MiniQM.Admin.Models
         public AQL? QualityCertificateSamplePlanAQL { get; set; }
         [Display(Name = "Ölçüm Aletleri")]
         public string ProductionEquipmentName { get; set; }
+        [Display(Name = "Ölçüm Aletleri")]
+        public int? ProductionEquipmentId { get; set; }
         public decimal? NominalSize { get; set; }
         [Display(Name = "Maximum Değer")]
         public decimal? MaxSize { get; set; }
