@@ -181,13 +181,28 @@
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\CompaniesController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\AccountViewModels.cs" />
+    <Compile Include="Models\CertificateModelView.cs" />
+    <Compile Include="Models\ChangeQualityPlanViewModel.cs" />
+    <Compile Include="Models\CompanyViewModel.cs" />
+    <Compile Include="Models\CriterionViewModel.cs" />
+    <Compile Include="Models\DepartmentViewModel.cs" />
+    <Compile Include="Models\FacilityViewModel.cs" />
+    <Compile Include="Models\LanguageViewModel.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
+    <Compile Include="Models\MaterialViewModel.cs" />
+    <Compile Include="Models\PositionViewModel.cs" />
+    <Compile Include="Models\ProductionEquipmentViewModel.cs" />
+    <Compile Include="Models\QualityPlanViewModel.cs" />
+    <Compile Include="Models\SystemUserViewModel.cs" />
+    <Compile Include="Models\UnitViewModel.cs" />
+    <Compile Include="Models\UserGroupViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
   </ItemGroup>
@@ -2015,6 +2030,11 @@
     <Content Include="vendor\fontawesome-free\webfonts\fa-solid-900.woff2" />
     <Content Include="vendor\jquery\jquery.min.map" />
     <Content Include="vendor\jquery\jquery.slim.min.map" />
+    <Content Include="Views\Companies\Create.cshtml" />
+    <Content Include="Views\Companies\Delete.cshtml" />
+    <Content Include="Views\Companies\Details.cshtml" />
+    <Content Include="Views\Companies\Edit.cshtml" />
+    <Content Include="Views\Companies\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

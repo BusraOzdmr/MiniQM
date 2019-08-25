@@ -1,21 +1,23 @@
-﻿using System;
+﻿using MiniQM.Model;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.Web;
 
-namespace MiniQM.Model
+namespace MiniQM.Admin.Models
 {
-    public class Criterion:BaseEntity
+    public class CriterionViewModel
     {
+        public int Id { get; set; }
         [Display(Name = "Kriter")]
-        public string Name { get; set; }        
+        public string Name { get; set; }
         [Display(Name = "Seviye")]
         public Level? Level { get; set; }
         [Display(Name = "Sertifika")]
         public int? CertificateId { get; set; }
-        public virtual Certificate Certificate { get; set; }
+        [Display(Name = "Sertifika")]
+        public string CertificateName { get; set; }
         [Display(Name = "Q-Faktor")]
         public decimal? Contrafactor { get; set; } //Q-factor
         [Display(Name = "Kabul Edilebilir Seviye")]
@@ -25,19 +27,23 @@ namespace MiniQM.Model
         public bool IsDynamic { get; set; }
         [Display(Name = "Detaylı")]
         public bool IsDetailed { get; set; }
-        
+
         [Display(Name = "Birim")]
         public int? UnitId { get; set; }
-        public virtual Unit Unit { get; set; }
-        [Display(Name="Ölçüm Aletleri")]
+        [Display(Name = "Birim")]
+        public string UnitName { get; set; }
+        [Display(Name = "Ölçüm Aletleri")]
         public int? ProductionEquipmentId { get; set; }
-        public virtual ProductionEquipment ProductionEquipment { get; set; }
+        [Display(Name = "Ölçüm Aletleri")]
+        public string ProductionEquipmentName { get; set; }
         [Display(Name = "Kullanıcı")]
         public int? SystemUserId { get; set; }
-        public virtual SystemUser SystemUser { get; set; }
-        [Display(Name = "Bilgi Grubu")]
+        [Display(Name = "Kullanıcı")]
+        public string SystemUserUserName { get; set; }
+        [Display(Name = "Bilgi Grubu")]        
         public int? UserGroupId { get; set; }
-        public virtual UserGroup UserGroup { get; set; }
+        [Display(Name = "Bilgi Grubu")]
+        public string UserGroupName { get; set; }
         [Display(Name = "Kritik mi?")]
         public bool IsCritical { get; set; }
         [Display(Name = "Nominal Büyüklük")]
@@ -49,9 +55,10 @@ namespace MiniQM.Model
         [Display(Name = "Satın Alma Kontrol")]
         public bool PurchasingControl { get; set; }
         [Display(Name = "Üretim Kontrol")]
-        public bool ProductionControl { get; set; }        
+        public bool ProductionControl { get; set; }
+        [Display(Name = "Açıklama")]
+        [MaxLength(4000)]
+        [DataType(DataType.MultilineText)]
         public string Description { get; set; }
-
-        public virtual ICollection<ChangeQualityPlan> ChangeQualityPlans { get; set; }
     }
 }

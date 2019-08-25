@@ -2,21 +2,19 @@
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.Web;
 
-namespace MiniQM.Model
+namespace MiniQM.Admin.Models
 {
-    public class Material:BaseEntity //Malzeme
+    public class MaterialViewModel
     {
+        public int Id { get; set; }
         [Display(Name = "Ad")]
         [Required]
         public string Name { get; set; }
         [Display(Name = "İndex")]
         [Required]
         public int Index { get; set; }
-        public virtual ICollection<QualityPlan> QualityPlans { get; set; }
-        public virtual ICollection<ChangeQualityPlan> ChangeQualityPlans { get; set; }
 
     }
 }

@@ -7,18 +7,16 @@ using System.Threading.Tasks;
 
 namespace MiniQM.Model
 {
-    public class UserGroup:BaseEntity
+    public class Certificate:BaseEntity
     {
-        [Display(Name="Kullanıcı Grubu")]
+        [Display(Name="Sertifika Adı")]
         [Required]
         public string Name { get; set; }
-        [Display(Name = "Açıklama Dili")]
-        public int? LanguageId { get; set; }
-        public virtual Language Language { get; set; }
-        
-        [Display(Name = "Grup Açıklaması")]
+        [Display(Name="Açıklama")]
+        [Required]
         [MaxLength(4000)]
         public string Description { get; set; }
+        public virtual ICollection<ChangeQualityPlan> ChangeQualityPlans { get; set; }
         public virtual ICollection<Criterion> Criterions { get; set; }
     }
 }

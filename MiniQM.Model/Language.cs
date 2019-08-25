@@ -13,5 +13,8 @@ namespace MiniQM.Model
         public string Name { get; set; }
         [Display(Name = "Dil Kodu")]
         public string Code { get; set; }
+        public virtual ICollection<ProductionEquipment> ProductionEquipments { get; set; }
+        public virtual ICollection<Unit> Units { get; set; }
+        public virtual ICollection<UserGroup> UserGroups { get; set; }
     }
 }

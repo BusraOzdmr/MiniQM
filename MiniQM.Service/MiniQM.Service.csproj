@@ -41,8 +41,21 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Class1.cs" />
+    <Compile Include="CertificatePlanService.cs" />
+    <Compile Include="ChangeQualityPlanService.cs" />
+    <Compile Include="CompanyService.cs" />
+    <Compile Include="CriterionService.cs" />
+    <Compile Include="DepartmentService.cs" />
+    <Compile Include="FacilityService.cs" />
+    <Compile Include="LanguageService.cs" />
+    <Compile Include="MaterialService.cs" />
+    <Compile Include="PositionService.cs" />
+    <Compile Include="ProductionEquipmentService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="QualityPlanService.cs" />
+    <Compile Include="SystemUserService.cs" />
+    <Compile Include="UnitService.cs" />
+    <Compile Include="UserGroupService.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\MiniQM.Data\MiniQM.Data.csproj">

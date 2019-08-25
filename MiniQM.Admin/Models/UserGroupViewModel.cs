@@ -2,23 +2,27 @@
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.Web;
 
-namespace MiniQM.Model
+namespace MiniQM.Admin.Models
 {
-    public class UserGroup:BaseEntity
+    public class UserGroupViewModel
     {
-        [Display(Name="Kullanıcı Grubu")]
+        public int Id { get; set; }
+        [Display(Name = "Kullanıcı Grubu")]
         [Required]
         public string Name { get; set; }
+
         [Display(Name = "Açıklama Dili")]
         public int? LanguageId { get; set; }
-        public virtual Language Language { get; set; }
+        [Display(Name = "Açıklama Dili")]
+        public string LanguageCode { get; set; }
         
+
         [Display(Name = "Grup Açıklaması")]
         [MaxLength(4000)]
+        [DataType(DataType.MultilineText)]
         public string Description { get; set; }
-        public virtual ICollection<Criterion> Criterions { get; set; }
+        
     }
 }

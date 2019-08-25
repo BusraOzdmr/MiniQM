@@ -1,17 +1,20 @@
-﻿using System;
+﻿using MiniQM.Model;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.Web;
 
-namespace MiniQM.Model
+namespace MiniQM.Admin.Models
 {
-    public class Unit:BaseEntity
+    public class UnitViewModel
     {
-        [Display(Name="Dil")]
+        public int Id { get; set; }
+        [Display(Name = "Dil")]
+        public string LanguageCode { get; set; }
+        [Display(Name = "Dil")]
         public int? LanguageId { get; set; }
-        public virtual Language Language { get; set; }
+ 
         [Display(Name = "Birim")]
         [Required]
         public string Name { get; set; }
@@ -21,8 +24,5 @@ namespace MiniQM.Model
         public string Description { get; set; }
         [Display(Name = "Kategori")]
         public UnitCategory UnitCategory { get; set; }
-        public virtual ICollection<Criterion> Criterions { get; set; }
-        public virtual ICollection<ChangeQualityPlan> ChangeQualityPlans { get; set; }
-
     }
 }

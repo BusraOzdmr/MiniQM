@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace MiniQM.Model
 {
-    public class SystemUsers: BaseEntity
+    public class SystemUser: BaseEntity
     {
         [Display(Name="Kullanıcı Adı")]
         [Required] 
@@ -30,13 +30,15 @@ namespace MiniQM.Model
         public string Email { get; set; }
         [Display(Name = "Firma")]
         [Required]
-        public Company CompanyId { get; set; }
+        public int CompanyId { get; set; }
         public Company Company { get; set; }
         [Display(Name = "Bölüm")]
         [Required]
+        public int DepartmentId { get; set; }
         public Department Department { get; set; }
         [Display(Name = "Pozisyon")]
         [Required]
+        public int PositionId { get; set; }
         public Position Position { get; set; }
         [Display(Name = "Profil")]
         [Required]
@@ -44,6 +46,6 @@ namespace MiniQM.Model
         [Display(Name = "Dosya Yolu")]
         [Required]
         public string FilePath { get; set; }
-
+        public virtual ICollection<Criterion> Criterions { get; set; }
     }
 }

@@ -12,8 +12,10 @@ namespace MiniQM.Model
         [Display(Name = "Ad")]
         [Required]
         public string Name { get; set; }
+        public virtual ICollection<QualityPlan> QualityPlans { get; set; }
         public virtual ICollection<Facility> Facilities { get; set; }
         public virtual ICollection<Department> Departments { get; set; }
-
+        public virtual ICollection<ProductionEquipment> ProductionEquipments { get; set; }
+        public virtual ICollection<SystemUser> SystemUsers { get; set; }
     }
 }

@@ -15,7 +15,9 @@ namespace MiniQM.Model
         [Display(Name = "Bağlı Olduğu Firma")]
         [Required]
         public int CompanyId { get; set; }
-        public Company Company { get; set; }
+        public virtual Company Company { get; set; }
+        public virtual ICollection<QualityPlan> QualityPlans { get; set; }
         public virtual ICollection<Department> Departments { get; set; }
+        public virtual ICollection<ProductionEquipment> ProductionEquipments { get; set; }
     }
 }

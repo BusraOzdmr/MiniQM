@@ -1,29 +1,36 @@
-﻿using System;
+﻿using MiniQM.Model;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.Web;
 
-namespace MiniQM.Model
+namespace MiniQM.Admin.Models
 {
-    public class QualityPlan:BaseEntity // Kalite Planı
-    {        
+    public class QualityPlanViewModel
+    {
+        public int Id { get; set; }
         [Display(Name = "Firma")]
         [Required]
         public int CompanyId { get; set; }
-        public virtual Company Company { get; set; }
+        [Display(Name = "Firma")]
+        public string CompanyName { get; set; }
 
         [Display(Name = "Tesis")]
         [Required]
         public int FacilityId { get; set; }
-        public virtual Facility Facility { get; set; }
+        [Display(Name = "Tesis")]
+        public string FacilityName { get; set; }
 
+        [Display(Name = "Malzeme İndexi")]
+        [Required]
+        public int MaterialIndex { get; set; }
         [Display(Name = "Malzeme")]
         [Required]
-        public int MaterialId{ get; set; }
-        public virtual Material Material { get; set; }
-        
+        public int MaterialId { get; set; }
+        [Display(Name = "Malzeme")]
+        public string MaterialName { get; set; }
+
         [Display(Name = "Açıklama")]
         [MaxLength(4000)]
         [DataType(DataType.MultilineText)]
@@ -38,7 +45,5 @@ namespace MiniQM.Model
 
         [Display(Name = "Süreç mi?")]
         public IsProcess? IsProcess { get; set; }
-        public virtual ICollection<ChangeQualityPlan> ChangeQualityPlans { get; set; }
-
     }
 }

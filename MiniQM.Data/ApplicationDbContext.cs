@@ -15,5 +15,9 @@ namespace MiniQM.Data
         {
             return new ApplicationDbContext();
         }
+
+        
+
+        public System.Data.Entity.DbSet<MiniQM.Model.Company> Companies { get; set; }
     }
 }

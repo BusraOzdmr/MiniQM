@@ -2,28 +2,25 @@
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.Web;
 
-namespace MiniQM.Model
+namespace MiniQM.Admin.Models
 {
-    public class Department:BaseEntity
+    public class DepartmentViewModel
     {
-        [Display(Name="Bölüm")]
+        public int Id { get; set; }
+        [Display(Name = "Bölüm")]
         [Required]
         public string Name { get; set; }
         [Display(Name = "Firma")]
         [Required]
         public int CompanyId { get; set; }
+        [Display(Name = "Firma")]
         public string CompanyName { get; set; }
-        public virtual Company Company { get; set; }
         [Display(Name = "Tesis")]
         [Required]
         public int FacilityId { get; set; }
+        [Display(Name = "Tesis")]
         public string FacilityName { get; set; }
-        public virtual Facility Facility { get; set; }
-
-        public virtual ICollection<Position> Positions { get; set; }
-        public virtual ICollection<SystemUser> SystemUsers { get; set; }
     }
 }
