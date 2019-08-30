@@ -195,10 +195,13 @@
     <Compile Include="Controllers\DepartmentsController.cs" />
     <Compile Include="Controllers\FacilitiesController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\LanguagesController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\MaterialsController.cs" />
     <Compile Include="Controllers\PositionsController.cs" />
     <Compile Include="Controllers\QualityPlansController.cs" />
+    <Compile Include="Controllers\SystemUsersController.cs" />
+    <Compile Include="Controllers\UserGroupsController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -2075,6 +2078,21 @@
     <Content Include="Views\Positions\Details.cshtml" />
     <Content Include="Views\Positions\Edit.cshtml" />
     <Content Include="Views\Positions\Index.cshtml" />
+    <Content Include="Views\SystemUsers\Create.cshtml" />
+    <Content Include="Views\SystemUsers\Delete.cshtml" />
+    <Content Include="Views\SystemUsers\Details.cshtml" />
+    <Content Include="Views\SystemUsers\Edit.cshtml" />
+    <Content Include="Views\SystemUsers\Index.cshtml" />
+    <Content Include="Views\UserGroups\Create.cshtml" />
+    <Content Include="Views\UserGroups\Delete.cshtml" />
+    <Content Include="Views\UserGroups\Details.cshtml" />
+    <Content Include="Views\UserGroups\Edit.cshtml" />
+    <Content Include="Views\UserGroups\Index.cshtml" />
+    <Content Include="Views\Languages\Create.cshtml" />
+    <Content Include="Views\Languages\Delete.cshtml" />
+    <Content Include="Views\Languages\Details.cshtml" />
+    <Content Include="Views\Languages\Edit.cshtml" />
+    <Content Include="Views\Languages\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

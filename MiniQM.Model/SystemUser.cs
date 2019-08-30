@@ -28,23 +28,24 @@ namespace MiniQM.Model
         [EmailAddress]
         [Required]
         public string Email { get; set; }
-        [Display(Name = "Firma")]
         
-        public int? CompanyId { get; set; }
+        
+        public int CompanyId { get; set; }
         public Company Company { get; set; }
-        [Display(Name = "Bölüm")]
         
-        public int? DepartmentId { get; set; }
+        
+        public int DepartmentId { get; set; }
         public Department Department { get; set; }
-        [Display(Name = "Pozisyon")]
+        
         
         public int? PositionId { get; set; }
         public Position Position { get; set; }
+
         [Display(Name = "Profil")]
-        [Required]
+        
         public string Profile { get; set; }
         [Display(Name = "Dosya Yolu")]
-        [Required]
+        
         public string FilePath { get; set; }
         public virtual ICollection<Criterion> Criterions { get; set; }
     }

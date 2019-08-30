@@ -12,6 +12,11 @@ namespace MiniQM.Service
     {
         private readonly IRepository<Language> languageRepository;
         private readonly IUnitOfWork unitOfWork;
+        public LanguageService(IRepository<Language> languageRepository, IUnitOfWork unitOfWork)
+        {
+            this.languageRepository = languageRepository;
+            this.unitOfWork = unitOfWork;
+        }
         public bool Any(int id)
         {
             return languageRepository.Any(x => x.Id == id);
@@ -39,11 +44,13 @@ namespace MiniQM.Service
         public void Insert(Language language)
         {
             languageRepository.Insert(language);
+            unitOfWork.SaveChanges();
         }
 
         public void Update(Language language)
         {
             languageRepository.Update(language);
+            unitOfWork.SaveChanges();
         }
     }
 

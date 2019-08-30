@@ -1,28 +1,28 @@
-﻿@model IEnumerable<MiniQM.Admin.Models.PositionViewModel>
+﻿@model IEnumerable<MiniQM.Admin.Models.LanguageViewModel>
 
 @{
-    ViewBag.Title = "Pozisyonlar";
+    ViewBag.Title = "Diller";
 }
 
-<h2>Pozisyonlar</h2>
+<h2>Diller</h2>
 
 <p>
-    <a href="@Url.Action("Create")" class="btn btn-primary">Yeni Pozisyon</a>
+    <a href="@Url.Action("Create")" class="btn btn-primary">Dil Ekle</a>
 </p>
-<table class="table" id="#myTable">
+<table class="table">
     <tr>
         <th>
             @Html.DisplayNameFor(model => model.Name)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.DepartmentName)
+            @Html.DisplayNameFor(model => model.Code)
         </th>
-       
+        
         <th>
             @Html.DisplayNameFor(model => model.IsActive)
         </th>
         
-        <th>Eylemler</th>
+        <th></th>
     </tr>
 
 @foreach (var item in Model) {
@@ -31,7 +31,7 @@
             @Html.DisplayFor(modelItem => item.Name)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.DepartmentName)
+            @Html.DisplayFor(modelItem => item.Code)
         </td>
         
         <td>

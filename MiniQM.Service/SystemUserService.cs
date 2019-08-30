@@ -13,6 +13,12 @@ namespace MiniQM.Service
         private readonly IRepository<SystemUser> systemUserRepository;
         private readonly IUnitOfWork unitOfWork;
 
+        public SystemUserService(IRepository<SystemUser> systemUserRepository, IUnitOfWork unitOfWork)
+        {
+            this.systemUserRepository = systemUserRepository;
+            this.unitOfWork = unitOfWork;
+        }
+
         public bool Any(int id)
         {
             return systemUserRepository.Any(x => x.Id == id);

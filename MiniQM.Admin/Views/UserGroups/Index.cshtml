@@ -1,23 +1,26 @@
-﻿@model IEnumerable<MiniQM.Admin.Models.PositionViewModel>
+﻿@model IEnumerable<MiniQM.Admin.Models.UserGroupViewModel>
 
 @{
-    ViewBag.Title = "Pozisyonlar";
+    ViewBag.Title = "Kullanıcı Grupları";
 }
 
-<h2>Pozisyonlar</h2>
+<h2>Index</h2>
 
 <p>
-    <a href="@Url.Action("Create")" class="btn btn-primary">Yeni Pozisyon</a>
+    <a href="@Url.Action("Create")" class="btn btn-primary">Yeni Grup</a>
 </p>
-<table class="table" id="#myTable">
+<table class="table">
     <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.LanguageCode)
+        </th>
         <th>
             @Html.DisplayNameFor(model => model.Name)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.DepartmentName)
+            @Html.DisplayNameFor(model => model.Description)
         </th>
-       
+        
         <th>
             @Html.DisplayNameFor(model => model.IsActive)
         </th>
@@ -28,10 +31,13 @@
 @foreach (var item in Model) {
     <tr>
         <td>
+            @Html.DisplayFor(modelItem => item.LanguageCode)
+        </td>
+        <td>
             @Html.DisplayFor(modelItem => item.Name)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.DepartmentName)
+            @Html.DisplayFor(modelItem => item.Description)
         </td>
         
         <td>

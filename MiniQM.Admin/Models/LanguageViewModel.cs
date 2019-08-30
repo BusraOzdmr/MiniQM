@@ -13,5 +13,8 @@ namespace MiniQM.Admin.Models
         public string Name { get; set; }
         [Display(Name = "Dil Kodu")]
         public string Code { get; set; }
+
+        [Display(Name = "Aktif mi?")]
+        public bool IsActive { get; set; }
     }
 }

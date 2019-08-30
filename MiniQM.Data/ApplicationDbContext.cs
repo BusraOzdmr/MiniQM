@@ -26,6 +26,9 @@ namespace MiniQM.Data
         public virtual DbSet<QualityPlan> QualityPlans { get; set; }
         public virtual DbSet<Material> Materials { get; set; }
         public virtual DbSet<Position> Positions { get; set; }
+        public virtual DbSet<SystemUser> SystemUsers { get; set; }
+        public virtual DbSet<UserGroup> UserGroups { get; set; }
+        public virtual DbSet<Language> Languages { get; set; }
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);
@@ -35,7 +38,13 @@ namespace MiniQM.Data
             new QualityPlanBuilder(modelBuilder.Entity<QualityPlan>());
             new MaterialBuilder(modelBuilder.Entity<Material>());
             new PositionBuilder(modelBuilder.Entity<Position>());
+            new SystemUserBuilder(modelBuilder.Entity<SystemUser>());
+            new UserGroupBuilder(modelBuilder.Entity<UserGroup>());
+            new LanguageBuilder(modelBuilder.Entity<Language>());
+
         }
+
+        
 
         
     }

@@ -22,6 +22,22 @@ namespace MiniQM.Admin.Models
         [Display(Name = "Soyadı")]
         [Required]
         public string Surname { get; set; }
+        [Display(Name = "Firma")]
+        public int CompanyId { get; set; }
+        [Display(Name = "Firma")]
+        public string CompanyName { get; set; }
+
+        [Display(Name = "Bölüm")]
+
+        public int DepartmentId { get; set; }
+        [Display(Name = "Bölüm")]
+        public string DepartmentName { get; set; }
+
+        [Display(Name = "Pozisyon")]
+
+        public int? PositionId { get; set; }
+        [Display(Name = "Pozisyon")]
+        public string PositionName { get; set; }
         [Display(Name = "Kontak Tipi")]
         [Required]
         public ContactType ContactType { get; set; }
@@ -30,29 +46,18 @@ namespace MiniQM.Admin.Models
         [Required]
         public string Email { get; set; }
         
-        [Display(Name = "Firma")]
         
-        public int? CompanyId { get; set; }
-        [Display(Name = "Firma")]
-        public string CompanyName { get; set; }
         
-        [Display(Name = "Bölüm")]
         
-        public int? DepartmentId { get; set; }
-        [Display(Name = "Bölüm")]
-        public string DepartmentName { get; set; }
-        
-        [Display(Name = "Pozisyon")]
-        
-        public int? PositionId { get; set; }
-        [Display(Name = "Pozisyon")]
-        public string PositionName { get; set; }
         [Display(Name = "Profil")]
         [Required]
         public string Profile { get; set; }
         [Display(Name = "Dosya Yolu")]
         [Required]
         public string FilePath { get; set; }
+
+        [Display(Name = "Aktif Mi?")]
+        public bool IsActive { get; set; }
 
     }
 }

@@ -57,8 +57,25 @@ namespace MiniQM.Admin
             dest => dest.DepartmentName, opt => opt.MapFrom(src => src.Department.Name)).ReverseMap().
             ForMember(dest => dest.Department, opt => opt.Ignore()).
             ForMember(dest => dest.SystemUsers, opt => opt.Ignore());
-            
 
+            cfg.CreateMap<SystemUser, SystemUserViewModel>().ForMember(
+            dest => dest.CompanyName, opt => opt.MapFrom(src => src.Company.Name)).ForMember(
+            dest => dest.DepartmentName, opt => opt.MapFrom(src => src.Department.Name)).ForMember(
+            dest => dest.PositionName, opt => opt.MapFrom(src => src.Position.Name)).ReverseMap().
+            ForMember(dest => dest.Company, opt => opt.Ignore()).
+            ForMember(dest => dest.Department, opt => opt.Ignore()).
+            ForMember(dest => dest.Position, opt => opt.Ignore()).
+            ForMember(dest => dest.Criterions, opt => opt.Ignore());
+
+            cfg.CreateMap<UserGroup, UserGroupViewModel>().ForMember(
+            dest => dest.LanguageCode, opt => opt.MapFrom(src => src.Language.Code)).ReverseMap().
+            ForMember(dest => dest.Language, opt => opt.Ignore()).
+            ForMember(dest => dest.Criterions, opt => opt.Ignore());
+
+            cfg.CreateMap<Language, LanguageViewModel>().ReverseMap().
+            ForMember(dest => dest.ProductionEquipments, opt => opt.Ignore()).
+            ForMember(dest => dest.Units, opt => opt.Ignore()).
+            ForMember(dest => dest.UserGroups, opt => opt.Ignore());
 
             Mapper.Initialize(cfg);
         }
