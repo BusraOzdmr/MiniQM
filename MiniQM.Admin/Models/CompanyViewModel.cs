@@ -4,6 +4,7 @@ using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Web;
 
+
 namespace MiniQM.Admin.Models
 {
     public class CompanyViewModel
@@ -12,5 +13,7 @@ namespace MiniQM.Admin.Models
         [Display(Name = "Ad")]
         [Required]
         public string Name { get; set; }
+        [Display(Name = "Aktif mi?")]
+        public bool IsActive { get; set; }
     }
 }

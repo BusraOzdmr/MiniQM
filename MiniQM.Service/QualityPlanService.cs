@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace MiniQM.Service
 {    
-    class QualityPlanService : IQualityPlanService
+    public class QualityPlanService : IQualityPlanService
     {
         private readonly IRepository<QualityPlan> qualityPlanRepository;
         private readonly IUnitOfWork unitOfWork;

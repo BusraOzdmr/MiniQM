@@ -12,6 +12,12 @@ namespace MiniQM.Service
     {
         private readonly IRepository<Position> positionRepository;
         private readonly IUnitOfWork unitOfWork;
+
+        public PositionService(IRepository<Position> positionRepository, IUnitOfWork unitOfWork)
+        {
+            this.positionRepository = positionRepository;
+            this.unitOfWork = unitOfWork;
+        }
         public bool Any(int id)
         {
             return positionRepository.Any(x => x.Id == id);

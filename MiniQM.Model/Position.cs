@@ -11,10 +11,8 @@ namespace MiniQM.Model
     {
         [Display(Name="Pozisyon")]
         [Required]
-        public string Name { get; set;}
-        [Display(Name = "Bölüm")]
-        
-        public int? DepartmantId { get; set; }        
+        public string Name { get; set;}        
+        public int DepartmentId { get; set; }        
         public virtual Department Department { get; set; }
         public virtual ICollection<SystemUser> SystemUsers { get; set; }
 

@@ -15,12 +15,10 @@ namespace MiniQM.Model
         [Display(Name = "Firma")]
         
         public int? CompanyId { get; set; }
-        public string CompanyName { get; set; }
         public virtual Company Company { get; set; }
-        [Display(Name = "Tesis")]
-        
+
+        [Display(Name = "Tesis")]        
         public int? FacilityId { get; set; }
-        public string FacilityName { get; set; }
         public virtual Facility Facility { get; set; }
 
         public virtual ICollection<Position> Positions { get; set; }

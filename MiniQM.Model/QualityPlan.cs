@@ -9,20 +9,19 @@ namespace MiniQM.Model
 {
     public class QualityPlan:BaseEntity // Kalite Planı
     {        
-        [Display(Name = "Firma")]
+ 
         
-        public int? CompanyId { get; set; }
+        public int CompanyId { get; set; }
         public virtual Company Company { get; set; }
-
-        [Display(Name = "Tesis")]
+   
         
         public int? FacilityId { get; set; }
         public virtual Facility Facility { get; set; }
-
-        [Display(Name = "Malzeme")]
+  
         
-        public int? MaterialId{ get; set; }
+        public int MaterialId{ get; set; }
         public virtual Material Material { get; set; }
+
         
         [Display(Name = "Açıklama")]
         [MaxLength(4000)]
@@ -32,6 +31,7 @@ namespace MiniQM.Model
         [Display(Name = "Başlangıç Tarihi")]
         [DataType(DataType.Date)]
         public DateTime? StartDate { get; set; }
+
         [Display(Name = "Bitiş Tarihi")]
         [DataType(DataType.Date)]
         public DateTime? ClosedDate { get; set; }

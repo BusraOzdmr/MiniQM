@@ -12,11 +12,11 @@
     <title>MiniQM</title>
 
     <!-- Custom fonts for this template-->
-    <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+    <link href="/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
     <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
 
     <!-- Custom styles for this template-->
-    <link href="css/sb-admin-2.min.css" rel="stylesheet">
+    <link href="/css/sb-admin-2.min.css" rel="stylesheet">
     <link href="//cdn.datatables.net/1.10.19/css/jquery.dataTables.min.css" rel="stylesheet" type="text/css" />
     <link href="https://cdn.datatables.net/responsive/2.2.3/css/responsive.dataTables.min.css" rel="stylesheet" type="text/css" />
 
@@ -28,7 +28,7 @@
     <div id="wrapper">
 
         <!-- Sidebar -->
-        <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
+        <ul class="navbar-nav bg-gray-900 sidebar sidebar-dark accordion" id="accordionSidebar">
 
             <!-- Sidebar - Brand -->
             <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
@@ -55,7 +55,7 @@
             <!-- Heading -->
             <!-- Nav Item - Pages Collapse Menu -->
             <li class="nav-item">
-                <a class="nav-link collapsed" href="#">
+                <a class="nav-link collapsed" href="@Url.Action("Index","QualityPlans")">
 
                     <span>QM01-Kalite Kontrol Planı</span>
                 </a>
@@ -69,7 +69,7 @@
             </li>
 
             <!-- Nav Item - Utilities Collapse Menu -->
-            @*<li class="nav-item">
+            <li class="nav-item">
                     <a class="nav-link collapsed" href="#">
 
                         <span>QM02-Kalite Kontrol Planı Değiştirme</span>
@@ -83,11 +83,11 @@
                                 <a class="collapse-item" href="utilities-other.html">Other</a>
                             </div>
                         </div>
-                </li>*@
+                </li>
             <li class="nav-item">
                 <a class="nav-link collapsed" href="#">
 
-                    <span>QM02-Mal Giriş Kalite Kontrol</span>
+                    <span>QM03-Mal Giriş Kalite Kontrol</span>
                 </a>
                 @*<div id="collapseUtilities" class="collapse" aria-labelledby="headingUtilities" data-parent="#accordionSidebar">
                         <div class="bg-white py-2 collapse-inner rounded">
@@ -102,7 +102,7 @@
             <li class="nav-item">
                 <a class="nav-link collapsed" href="#">
 
-                    <span>QM03-İade Hareketleri</span>
+                    <span>QM04-İade Hareketleri</span>
                 </a>
                 @*<div id="collapseUtilities" class="collapse" aria-labelledby="headingUtilities" data-parent="#accordionSidebar">
                         <div class="bg-white py-2 collapse-inner rounded">
@@ -117,7 +117,7 @@
             <li class="nav-item">
                 <a class="nav-link collapsed" href="#">
 
-                    <span>QM04-Tedarikçi Değerlendirme</span>
+                    <span>QM05-Tedarikçi Değerlendirme</span>
                 </a>
                 @*<div id="collapseUtilities" class="collapse" aria-labelledby="headingUtilities" data-parent="#accordionSidebar">
                         <div class="bg-white py-2 collapse-inner rounded">
@@ -132,7 +132,7 @@
             <li class="nav-item">
                 <a class="nav-link collapsed" href="#">
 
-                    <span>QM05-Üretim Kalite Kontrol Kaynakları</span>
+                    <span>QM06-Üretim Kalite Kontrol Kaynakları</span>
                 </a>
                 @*<div id="collapseUtilities" class="collapse" aria-labelledby="headingUtilities" data-parent="#accordionSidebar">
                         <div class="bg-white py-2 collapse-inner rounded">
@@ -147,7 +147,7 @@
             <li class="nav-item">
                 <a class="nav-link collapsed" href="#">
 
-                    <span>QM06-4D/8D Raporu</span>
+                    <span>QM07-4D/8D Raporu</span>
                 </a>
                 @*<div id="collapseUtilities" class="collapse" aria-labelledby="headingUtilities" data-parent="#accordionSidebar">
                         <div class="bg-white py-2 collapse-inner rounded">
@@ -162,7 +162,7 @@
             <li class="nav-item">
                 <a class="nav-link collapsed" href="#">
 
-                    <span>QM07-FMEA-Hata Türü ve Etkileri Analizi</span>
+                    <span>QM08-FMEA-Hata Türü ve Etkileri Analizi</span>
                 </a>
                 @*<div id="collapseUtilities" class="collapse" aria-labelledby="headingUtilities" data-parent="#accordionSidebar">
                         <div class="bg-white py-2 collapse-inner rounded">
@@ -174,12 +174,12 @@
                         </div>
                     </div>*@
             </li>
-            <li class="nav-item">
+            @*<li class="nav-item">
                 <a class="nav-link collapsed" href="#">
 
-                    <span>QM08-Düzeltici ve Önleyici Faaliyetler</span>
+                    <span>QM09-Düzeltici ve Önleyici Faaliyetler</span>
                 </a>
-                @*<div id="collapseUtilities" class="collapse" aria-labelledby="headingUtilities" data-parent="#accordionSidebar">
+                <div id="collapseUtilities" class="collapse" aria-labelledby="headingUtilities" data-parent="#accordionSidebar">
                         <div class="bg-white py-2 collapse-inner rounded">
                             <h6 class="collapse-header">Custom Utilities:</h6>
                             <a class="collapse-item" href="utilities-color.html">Colors</a>
@@ -187,8 +187,8 @@
                             <a class="collapse-item" href="utilities-animation.html">Animations</a>
                             <a class="collapse-item" href="utilities-other.html">Other</a>
                         </div>
-                    </div>*@
-            </li>
+                    </div>
+            </li>*@
             @*<li class="nav-item">
                     <a class="nav-link collapsed" href="#">
 
@@ -280,19 +280,19 @@
 
             <!-- Nav Item - Charts -->
             <li class="nav-item">
-                <a class="nav-link" href="charts.html">
+                <a class="nav-link" href="@Url.Action("Index","Facilities")">
                     <i class="fas fa-fw fa-folder"></i>
                     <span>Tesisler</span>
                 </a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="tables.html">
+                <a class="nav-link" href="@Url.Action("Index","Departments")">
                     <i class="fas fa-fw fa-folder"></i>
                     <span>Bölümler</span>
                 </a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="tables.html">
+                <a class="nav-link" href="@Url.Action("Index","Positions")">
                     <i class="fas fa-fw fa-folder"></i>
                     <span>Pozisyonlar</span>
                 </a>
@@ -318,7 +318,7 @@
 
             <!-- Nav Item - Tables -->
             <li class="nav-item">
-                <a class="nav-link" href="tables.html">
+                <a class="nav-link" href="@Url.Action("Index","Materials")">
                     <i class="fas fa-fw fa-folder"></i>
                     <span>Malzemeler</span>
                 </a>
@@ -578,7 +578,7 @@
 
     <!-- Page level plugins -->
     <script src="vendor/chart.js/Chart.min.js"></script>
-
+    @RenderSection("scripts", required: false)
     <!-- Page level custom scripts -->
     <script src="js/demo/chart-area-demo.js"></script>
     <script src="js/demo/chart-pie-demo.js"></script>

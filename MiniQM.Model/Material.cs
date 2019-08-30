@@ -12,9 +12,7 @@ namespace MiniQM.Model
         [Display(Name = "Ad")]
         [Required]
         public string Name { get; set; }
-        [Display(Name = "İndex")]
-        [Required]
-        public int Index { get; set; }
+        
         public virtual ICollection<QualityPlan> QualityPlans { get; set; }
         public virtual ICollection<ChangeQualityPlan> ChangeQualityPlans { get; set; }
 

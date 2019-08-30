@@ -16,7 +16,11 @@ namespace MiniQM.Service
         {
             return facilityRepository.Any(x => x.Id == id);
         }
-
+        public FacilityService(IRepository<Facility> facilityRepository, IUnitOfWork unitOfWork)
+        {
+            this.facilityRepository = facilityRepository;
+            this.unitOfWork = unitOfWork;
+        }
         public void Delete(int id)
         {
             var entity = facilityRepository.Get(id);
@@ -59,3 +63,4 @@ namespace MiniQM.Service
         bool Any(int id);
     }
 }
+

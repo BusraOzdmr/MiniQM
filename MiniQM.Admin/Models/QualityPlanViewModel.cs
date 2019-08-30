@@ -12,7 +12,7 @@ namespace MiniQM.Admin.Models
         public int Id { get; set; }
         [Display(Name = "Firma")]
         
-        public int? CompanyId { get; set; }
+        public int CompanyId { get; set; }
         [Display(Name = "Firma")]
         public string CompanyName { get; set; }
 
@@ -22,12 +22,8 @@ namespace MiniQM.Admin.Models
         [Display(Name = "Tesis")]
         public string FacilityName { get; set; }
 
-        [Display(Name = "Malzeme İndexi")]
-        
-        public int? MaterialIndex { get; set; }
         [Display(Name = "Malzeme")]
-        
-        public int? MaterialId { get; set; }
+        public int MaterialId { get; set; }
         [Display(Name = "Malzeme")]
         public string MaterialName { get; set; }
 
@@ -45,5 +41,7 @@ namespace MiniQM.Admin.Models
 
         [Display(Name = "Süreç mi?")]
         public IsProcess? IsProcess { get; set; }
+        [Display(Name = "Aktif mi?")]
+        public bool IsActive { get; set; }
     }
 }

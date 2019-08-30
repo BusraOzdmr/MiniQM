@@ -12,11 +12,13 @@ namespace MiniQM.Admin.Models
         [Display(Name = "Ad")]
         [Required]
         public string Name { get; set; }
-        [Display(Name = "Bağlı Olduğu Firma")]
+        [Display(Name = "Firma")]
         
-        public int? CompanyId { get; set; }
+        public int CompanyId { get; set; }
 
         [Display(Name = "Bağlı Olduğu Firma")]
         public string CompanyName { get; set; }
+        [Display(Name = "Aktif mi?")]
+        public bool IsActive { get; set; }
     }
 }

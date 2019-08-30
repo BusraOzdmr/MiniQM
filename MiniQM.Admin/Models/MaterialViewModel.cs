@@ -12,9 +12,9 @@ namespace MiniQM.Admin.Models
         [Display(Name = "Ad")]
         [Required]
         public string Name { get; set; }
-        [Display(Name = "İndex")]
-        [Required]
-        public int Index { get; set; }
+        [Display(Name="Aktif mi?")]
+        public bool IsActive { get; set; }
+        
 
     }
 }

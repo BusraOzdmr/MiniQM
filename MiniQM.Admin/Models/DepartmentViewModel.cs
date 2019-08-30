@@ -22,5 +22,7 @@ namespace MiniQM.Admin.Models
         public int? FacilityId { get; set; }
         [Display(Name = "Tesis")]
         public string FacilityName { get; set; }
+        [Display(Name="Aktif mi?")]
+        public bool IsActive { get; set; }
     }
 }

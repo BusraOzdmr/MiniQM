@@ -49,7 +49,7 @@ namespace MiniQM.Service
             unitOfWork.SaveChanges();
         }
 
-        public void Upload(Department department)
+        public void Update(Department department)
         {
             departmentRepository.Update(department);
             unitOfWork.SaveChanges();
@@ -61,7 +61,7 @@ namespace MiniQM.Service
         Department Get(int id);
         void Delete(int id);
         void Insert(Department department);
-        void Upload(Department department);
+        void Update(Department department);
         bool Any(int id);
     }
 

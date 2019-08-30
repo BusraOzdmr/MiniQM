@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace MiniQM.Service
 {
-    class MaterialService : IMaterialService
+    public class MaterialService : IMaterialService
     {
         private readonly IRepository<Material> materialRepository;
         private readonly IUnitOfWork unitOfWork;

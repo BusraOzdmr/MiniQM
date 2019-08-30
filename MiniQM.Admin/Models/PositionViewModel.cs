@@ -14,8 +14,11 @@ namespace MiniQM.Admin.Models
         public string Name { get; set; }
         [Display(Name = "Bölüm")]
                 
-        public int? DepartmantId { get; set; }
+        public int DepartmentId { get; set; }
         [Display(Name = "Bölüm")]
         public string DepartmentName { get; set; }
+
+        [Display(Name = "Aktif mi?")]
+        public bool IsActive { get; set; }
     }
 }

@@ -56,9 +56,15 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ApplicationDbContext.cs" />
-    <Compile Include="Migrations\201908252014544_InitialCreate.cs" />
-    <Compile Include="Migrations\201908252014544_InitialCreate.Designer.cs">
-      <DependentUpon>201908252014544_InitialCreate.cs</DependentUpon>
+    <Compile Include="Builders\CompanyBuilder.cs" />
+    <Compile Include="Builders\DepartmentBuilder.cs" />
+    <Compile Include="Builders\FacilityBuilder.cs" />
+    <Compile Include="Builders\MaterialBuilder.cs" />
+    <Compile Include="Builders\PositionBuilder.cs" />
+    <Compile Include="Builders\QualityPlanBuilder.cs" />
+    <Compile Include="Migrations\201908301604130_InitalCreate.cs" />
+    <Compile Include="Migrations\201908301604130_InitalCreate.Designer.cs">
+      <DependentUpon>201908301604130_InitalCreate.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -76,8 +82,8 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201908252014544_InitialCreate.resx">
-      <DependentUpon>201908252014544_InitialCreate.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201908301604130_InitalCreate.resx">
+      <DependentUpon>201908301604130_InitalCreate.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

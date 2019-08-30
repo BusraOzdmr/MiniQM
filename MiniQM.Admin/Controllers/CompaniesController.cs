@@ -1,4 +1,5 @@
 ﻿using System;
+using AutoMapper;
 using System.Collections.Generic;
 using System.Data;
 using System.Data.Entity;
@@ -6,6 +7,7 @@ using System.Linq;
 using System.Net;
 using System.Web;
 using System.Web.Mvc;
+using MiniQM.Admin.Models;
 using MiniQM.Data;
 using MiniQM.Model;
 using MiniQM.Service;
@@ -20,10 +22,15 @@ namespace MiniQM.Admin.Controllers
         {
             this.companyService = companyService;
         }
+        public CompaniesController()
+        {
+
+        }
         // GET: Companies
         public ActionResult Index()
         {
-            var companies = companyService.GetAll();
+            var companies = Mapper.Map<IEnumerable<CompanyViewModel>>(companyService.GetAll());
+            return View(companies);           
 
         }
 
@@ -34,7 +41,9 @@ namespace MiniQM.Admin.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Company company = db.Companies.Find(id);
+
+            CompanyViewModel company = Mapper.Map<CompanyViewModel>(companyService.Get(id.Value));
+
             if (company == null)
             {
                 return HttpNotFound();
@@ -57,8 +66,8 @@ namespace MiniQM.Admin.Controllers
         {
             if (ModelState.IsValid)
             {
-                db.Companies.Add(company);
-                db.SaveChanges();
+                var entity = Mapper.Map<Company>(company);
+                companyService.Insert(entity);
                 return RedirectToAction("Index");
             }
 
@@ -72,7 +81,7 @@ namespace MiniQM.Admin.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Company company = db.Companies.Find(id);
+            CompanyViewModel company = Mapper.Map<CompanyViewModel>(companyService.Get(id.Value));
             if (company == null)
             {
                 return HttpNotFound();
@@ -89,8 +98,8 @@ namespace MiniQM.Admin.Controllers
         {
             if (ModelState.IsValid)
             {
-                db.Entry(company).State = EntityState.Modified;
-                db.SaveChanges();
+                var entity = Mapper.Map<Company>(company);
+                companyService.Update(entity);
                 return RedirectToAction("Index");
             }
             return View(company);
@@ -103,11 +112,12 @@ namespace MiniQM.Admin.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Company company = db.Companies.Find(id);
+            CompanyViewModel company = Mapper.Map<CompanyViewModel>(companyService.Get(id.Value));
             if (company == null)
             {
                 return HttpNotFound();
             }
+            
             return View(company);
         }
 
@@ -116,19 +126,10 @@ namespace MiniQM.Admin.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
-            Company company = db.Companies.Find(id);
-            db.Companies.Remove(company);
-            db.SaveChanges();
+            companyService.Delete(id);
             return RedirectToAction("Index");
         }
 
-        protected override void Dispose(bool disposing)
-        {
-            if (disposing)
-            {
-                db.Dispose();
-            }
-            base.Dispose(disposing);
-        }
+        
     }
 }
