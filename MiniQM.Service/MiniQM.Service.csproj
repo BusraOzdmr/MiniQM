@@ -41,7 +41,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="CertificatePlanService.cs" />
+    <Compile Include="CertificateService.cs" />
     <Compile Include="ChangeQualityPlanService.cs" />
     <Compile Include="CompanyService.cs" />
     <Compile Include="CriterionService.cs" />

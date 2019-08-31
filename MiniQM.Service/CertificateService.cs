@@ -12,6 +12,11 @@ namespace MiniQM.Service
     {
         private readonly IRepository<Certificate> certificateRepository;
         private readonly IUnitOfWork unitOfWork;
+        public CertificateService(IRepository<Certificate> certificateRepository, IUnitOfWork unitOfWork)
+        {
+            this.certificateRepository = certificateRepository;
+            this.unitOfWork = unitOfWork;
+        }
         public bool Any(int id)
         {
             return certificateRepository.Any(x => x.Id == id);

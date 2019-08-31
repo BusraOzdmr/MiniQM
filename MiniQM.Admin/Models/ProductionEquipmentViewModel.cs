@@ -10,7 +10,7 @@ namespace MiniQM.Admin.Models
     {
         public int Id { get; set; }
         [Display(Name="Dil")]
-        public int? LangugeId { get; set; }
+        public int? LanguageId { get; set; }
         [Display(Name = "Dil")]
         public string LanguageCode { get; set; }
         [Display(Name = "Firma")]
@@ -29,5 +29,7 @@ namespace MiniQM.Admin.Models
         [MaxLength(4000)]
         [DataType(DataType.MultilineText)]
         public string Description { get; set; }
+        [Display(Name = "Aktif mi?")]
+        public bool IsActive { get; set; }
     }
 }

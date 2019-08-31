@@ -6,7 +6,7 @@ using System.Web;
 
 namespace MiniQM.Admin.Models
 {
-    public class CertificateModelView
+    public class CertificateViewModel
     {
         public int Id { get; set; }
         [Display(Name = "Sertifika Adı")]
@@ -16,5 +16,8 @@ namespace MiniQM.Admin.Models
         [DataType(DataType.MultilineText)]
         [MaxLength(4000)]
         public string Description { get; set; }
+        [Display(Name = "Açıklama")]
+        public bool IsActive { get; set; }
+
     }
 }

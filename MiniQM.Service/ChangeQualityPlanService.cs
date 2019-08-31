@@ -12,6 +12,12 @@ namespace MiniQM.Service
     {
         private readonly IRepository<ChangeQualityPlan> changeQualityPlanRepository;
         private readonly IUnitOfWork unitOfWork;
+
+        public ChangeQualityPlanService(IRepository<ChangeQualityPlan> changeQualityPlanRepository, IUnitOfWork unitOfWork)
+        {
+            this.changeQualityPlanRepository = changeQualityPlanRepository;
+            this.unitOfWork = unitOfWork;
+        }
         public bool Any(int id)
         {
             return changeQualityPlanRepository.Any(x => x.Id == id);

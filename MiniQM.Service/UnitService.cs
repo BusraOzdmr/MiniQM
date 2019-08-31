@@ -11,7 +11,12 @@ namespace MiniQM.Service
     public class UnitService : IUnitService
     {
         private readonly IRepository<Unit> unitRepository;
-        private readonly UnitOfWork unitOfWork;
+        private readonly IUnitOfWork unitOfWork;
+        public UnitService(IRepository<Unit> unitRepository, IUnitOfWork unitOfWork)
+        {
+            this.unitRepository = unitRepository;
+            this.unitOfWork = unitOfWork;            
+        }
         public bool Any(int id)
         {
             return unitRepository.Any(x => x.Id == id);

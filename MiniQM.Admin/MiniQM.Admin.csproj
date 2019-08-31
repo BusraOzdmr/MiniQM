@@ -191,7 +191,10 @@
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="AutoMapperConfig.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\CertificatesController.cs" />
+    <Compile Include="Controllers\ChangeQualityPlansController.cs" />
     <Compile Include="Controllers\CompaniesController.cs" />
+    <Compile Include="Controllers\CriteriaController.cs" />
     <Compile Include="Controllers\DepartmentsController.cs" />
     <Compile Include="Controllers\FacilitiesController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
@@ -199,14 +202,16 @@
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\MaterialsController.cs" />
     <Compile Include="Controllers\PositionsController.cs" />
+    <Compile Include="Controllers\ProductionEquipmentsController.cs" />
     <Compile Include="Controllers\QualityPlansController.cs" />
     <Compile Include="Controllers\SystemUsersController.cs" />
+    <Compile Include="Controllers\UnitsController.cs" />
     <Compile Include="Controllers\UserGroupsController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\AccountViewModels.cs" />
-    <Compile Include="Models\CertificateModelView.cs" />
+    <Compile Include="Models\CertificateViewModel.cs" />
     <Compile Include="Models\ChangeQualityPlanViewModel.cs" />
     <Compile Include="Models\CompanyViewModel.cs" />
     <Compile Include="Models\CriterionViewModel.cs" />
@@ -2093,6 +2098,31 @@
     <Content Include="Views\Languages\Details.cshtml" />
     <Content Include="Views\Languages\Edit.cshtml" />
     <Content Include="Views\Languages\Index.cshtml" />
+    <Content Include="Views\ChangeQualityPlans\Create.cshtml" />
+    <Content Include="Views\ChangeQualityPlans\Delete.cshtml" />
+    <Content Include="Views\ChangeQualityPlans\Details.cshtml" />
+    <Content Include="Views\ChangeQualityPlans\Edit.cshtml" />
+    <Content Include="Views\ChangeQualityPlans\Index.cshtml" />
+    <Content Include="Views\Certificates\Create.cshtml" />
+    <Content Include="Views\Certificates\Delete.cshtml" />
+    <Content Include="Views\Certificates\Details.cshtml" />
+    <Content Include="Views\Certificates\Edit.cshtml" />
+    <Content Include="Views\Certificates\Index.cshtml" />
+    <Content Include="Views\Units\Create.cshtml" />
+    <Content Include="Views\Units\Delete.cshtml" />
+    <Content Include="Views\Units\Details.cshtml" />
+    <Content Include="Views\Units\Edit.cshtml" />
+    <Content Include="Views\Units\Index.cshtml" />
+    <Content Include="Views\ProductionEquipments\Create.cshtml" />
+    <Content Include="Views\ProductionEquipments\Delete.cshtml" />
+    <Content Include="Views\ProductionEquipments\Details.cshtml" />
+    <Content Include="Views\ProductionEquipments\Edit.cshtml" />
+    <Content Include="Views\ProductionEquipments\Index.cshtml" />
+    <Content Include="Views\Criteria\Create.cshtml" />
+    <Content Include="Views\Criteria\Delete.cshtml" />
+    <Content Include="Views\Criteria\Details.cshtml" />
+    <Content Include="Views\Criteria\Edit.cshtml" />
+    <Content Include="Views\Criteria\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

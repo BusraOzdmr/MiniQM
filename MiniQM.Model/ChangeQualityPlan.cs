@@ -9,23 +9,21 @@ namespace MiniQM.Model
 {
     public class ChangeQualityPlan:BaseEntity
     {
-        [Display(Name="Kalite Planı")]
-        public int? QualityPlanId { get; set; }
+        [Display(Name="Kalite Planı No")]
+        public int QualityPlanId { get; set; }
         public virtual QualityPlan QualityPlan { get; set; }
         [Display(Name = "Malzeme İndeksi")]
         public int? MaterialId { get; set; }
         public virtual Material Material { get; set; }
         [Display(Name = "Kriter")]
-        public int CriterionId { get; set; }
-        [Display(Name = "Kriter Açıklaması")]
-        
+        public int? CriterionId { get; set; }
         public virtual Criterion Criterion { get; set; }
         [Display(Name = "Dinamik mi?")]
         public bool IsDynamic { get; set; }
         [Display(Name = "Detaylı mı?")]
         public bool IsDetailed { get; set; }
         [Display(Name = "Kriter Birimi")]
-        public int? UnitId { get; set; } //Kriterin seçilmesi ile otomatik dolacağı için dropdown list değil textbox yaptım
+        public int? UnitId { get; set; } 
         public virtual Unit Unit { get; set; }
         [Display(Name = "Sertifika")]
         public int? CertificateId { get; set; }
@@ -37,7 +35,7 @@ namespace MiniQM.Model
         [Display(Name = "Kabul Edilebilir Seviye")]
         public AQL? AQL { get; set; }
         [Display(Name = "Ölçüm Aletleri")]
-        public string ProductionEquipmentName { get; set; }
+        public int? ProductionEquipmentId { get; set; }
         public virtual ProductionEquipment ProductionEquipment { get; set; }
         public decimal? NominalSize { get; set; }
         [Display(Name = "Maximum Değer")]

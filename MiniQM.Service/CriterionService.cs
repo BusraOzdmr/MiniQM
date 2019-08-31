@@ -13,6 +13,12 @@ namespace MiniQM.Service
         private readonly IRepository<Criterion> criterionRepository;
         private readonly IUnitOfWork unitOfWork;
 
+        public CriterionService(IRepository<Criterion> criterionRepository, IUnitOfWork unitOfWork)
+        {
+            this.criterionRepository = criterionRepository;
+            this.unitOfWork = unitOfWork;
+        }
+
         public bool Any(int id)
         {
             return criterionRepository.Any(x => x.Id == id);

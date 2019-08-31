@@ -36,6 +36,11 @@ namespace MiniQM.Admin
             builder.RegisterType<SystemUserService>().As<ISystemUserService>();
             builder.RegisterType<UserGroupService>().As<IUserGroupService>();
             builder.RegisterType<LanguageService>().As<ILanguageService>();
+            builder.RegisterType<ChangeQualityPlanService>().As<IChangeQualityPlanService>();
+            builder.RegisterType<CertificateService>().As<ICertificateService>();
+            builder.RegisterType<UnitService>().As<IUnitService>();
+            builder.RegisterType<ProductionEquipmentService>().As<IProductionEquipmentService>();
+            builder.RegisterType<CriterionService>().As<ICriterionService>();
 
             IContainer container = builder.Build();
             DependencyResolver.SetResolver(new AutofacDependencyResolver(container));

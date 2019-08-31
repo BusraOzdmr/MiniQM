@@ -8,7 +8,7 @@ namespace MiniQM.Model
 {
     public class ProductionEquipment:BaseEntity
     {
-        public int? LangugeId { get; set; }
+        public int? LanguageId { get; set; }
         public virtual Language Language { get; set; }
         public int? CompanyId { get; set; }
         public virtual Company Company { get; set; }

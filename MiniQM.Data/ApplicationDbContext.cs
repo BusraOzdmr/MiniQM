@@ -29,6 +29,13 @@ namespace MiniQM.Data
         public virtual DbSet<SystemUser> SystemUsers { get; set; }
         public virtual DbSet<UserGroup> UserGroups { get; set; }
         public virtual DbSet<Language> Languages { get; set; }
+        public virtual DbSet<ChangeQualityPlan> ChangeQualityPlans { get; set; }
+        public virtual DbSet<Certificate> Certificates { get; set; }
+        public virtual DbSet<Criterion> Criterions { get; set; }
+        public virtual DbSet<Unit> Units { get; set; }
+        public virtual DbSet<ProductionEquipment> ProductionEquipments { get; set; }
+
+
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);
@@ -41,11 +48,18 @@ namespace MiniQM.Data
             new SystemUserBuilder(modelBuilder.Entity<SystemUser>());
             new UserGroupBuilder(modelBuilder.Entity<UserGroup>());
             new LanguageBuilder(modelBuilder.Entity<Language>());
+            new ChangeQualityPlanBuilder(modelBuilder.Entity<ChangeQualityPlan>());
+            new CertificateBuilder(modelBuilder.Entity<Certificate>());
+            new UnitBuilder(modelBuilder.Entity<Unit>());
+            new ProductionEquipmentBuilder(modelBuilder.Entity<ProductionEquipment>());
+            new CriterionBuilder(modelBuilder.Entity<Criterion>());
 
-        }
+        }        
 
         
 
         
+
+       
     }
 }

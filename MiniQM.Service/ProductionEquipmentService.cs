@@ -12,6 +12,12 @@ namespace MiniQM.Service
     {
         private readonly IRepository<ProductionEquipment> productionEquipmentRepository;
         private readonly IUnitOfWork unitOfWork;
+
+        public ProductionEquipmentService(IRepository<ProductionEquipment> productionEquipmentRepository, IUnitOfWork unitOfWork)
+        {
+            this.productionEquipmentRepository = productionEquipmentRepository;
+            this.unitOfWork = unitOfWork;
+        }
         public bool Any(int id)
         {
             return productionEquipmentRepository.Any(x => x.Id == id);

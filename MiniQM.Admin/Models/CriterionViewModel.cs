@@ -13,15 +13,15 @@ namespace MiniQM.Admin.Models
         [Display(Name = "Kriter")]
         public string Name { get; set; }
         [Display(Name = "Seviye")]
-        public Level? Level { get; set; }
+        public Level Level { get; set; }
         [Display(Name = "Sertifika")]
-        public int? CertificateId { get; set; }
+        public int CertificateId { get; set; }
         [Display(Name = "Sertifika")]
         public string CertificateName { get; set; }
         [Display(Name = "Q-Faktor")]
-        public decimal? Contrafactor { get; set; } //Q-factor
+        public decimal Contrafactor { get; set; } //Q-factor
         [Display(Name = "Kabul Edilebilir Seviye")]
-        public AQL? AQL { get; set; }
+        public AQL AQL { get; set; }
 
         [Display(Name = "Dinamik")]
         public bool IsDynamic { get; set; }
@@ -60,5 +60,7 @@ namespace MiniQM.Admin.Models
         [MaxLength(4000)]
         [DataType(DataType.MultilineText)]
         public string Description { get; set; }
+        [Display(Name = "Aktif mi?")]
+        public bool IsActive { get; set; }
     }
 }

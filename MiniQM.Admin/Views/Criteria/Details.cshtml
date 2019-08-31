@@ -1,0 +1,174 @@
+﻿@model MiniQM.Admin.Models.CriterionViewModel
+
+@{
+    ViewBag.Title = "Detaylar";
+}
+
+<h2>Detaylar</h2>
+
+<div>
+    <h4>Kriter</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.CertificateName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CertificateName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ProductionEquipmentName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ProductionEquipmentName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SystemUserUserName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SystemUserUserName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.UnitName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.UnitName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.UserGroupName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.UserGroupName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Level)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Level)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Contrafactor)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Contrafactor)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.AQL)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.AQL)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.IsDynamic)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.IsDynamic)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.IsDetailed)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.IsDetailed)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.IsCritical)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.IsCritical)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.NominalSize)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NominalSize)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MaxSize)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MaxSize)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MinSize)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MinSize)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PurchasingControl)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PurchasingControl)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ProductionControl)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ProductionControl)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Description)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Description)
+        </dd>
+
+        
+
+        <dt>
+            @Html.DisplayNameFor(model => model.IsActive)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.IsActive)
+        </dd>
+
+        
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

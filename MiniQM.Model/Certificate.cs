@@ -13,7 +13,7 @@ namespace MiniQM.Model
         [Required]
         public string Name { get; set; }
         [Display(Name="Açıklama")]
-        [Required]
+        
         [MaxLength(4000)]
         public string Description { get; set; }
         public virtual ICollection<ChangeQualityPlan> ChangeQualityPlans { get; set; }
