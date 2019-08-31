@@ -1,54 +1,54 @@
-﻿@model MiniQM.Model.ChangeQualityPlan
+﻿@model MiniQM.Admin.Models.ChangeQualityPlanViewModel
 
 @{
-    ViewBag.Title = "Delete";
+    ViewBag.Title = "Sil";
 }
 
-<h2>Delete</h2>
+<h2>Sil</h2>
 
-<h3>Are you sure you want to delete this?</h3>
+<h3>Detaylandırılmış kalite planını silmek istediğinizden emin misiniz?</h3>
 <div>
-    <h4>ChangeQualityPlan</h4>
+    <h4>Detaylı Kalite Planı</h4>
     <hr />
     <dl class="dl-horizontal">
         <dt>
-            @Html.DisplayNameFor(model => model.Certificate.Name)
+            @Html.DisplayNameFor(model => model.CertificateName)
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.Certificate.Name)
+            @Html.DisplayFor(model => model.CertificateName)
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.Criterion.Name)
+            @Html.DisplayNameFor(model => model.CriterionName)
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.Criterion.Name)
+            @Html.DisplayFor(model => model.CriterionName)
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.Material.Name)
+            @Html.DisplayNameFor(model => model.MaterialId)
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.Material.Name)
+            @Html.DisplayFor(model => model.MaterialId)
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.QualityPlan.Description)
+            @Html.DisplayNameFor(model => model.QualityPlanId)
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.QualityPlan.Description)
+            @Html.DisplayFor(model => model.QualityPlanId)
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.Unit.Name)
+            @Html.DisplayNameFor(model => model.UnitName)
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.Unit.Name)
+            @Html.DisplayFor(model => model.UnitName)
         </dd>
 
         <dt>
@@ -147,61 +147,7 @@
             @Html.DisplayFor(model => model.Description)
         </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.CreatedBy)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.CreatedBy)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.CreatedAt)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.CreatedAt)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.UpdatedBy)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.UpdatedBy)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.UpdatedAt)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.UpdatedAt)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.IsDeleted)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.IsDeleted)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.DeletedBy)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.DeletedBy)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.DeletedAt)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.DeletedAt)
-        </dd>
+       
 
         <dt>
             @Html.DisplayNameFor(model => model.IsActive)
@@ -211,29 +157,7 @@
             @Html.DisplayFor(model => model.IsActive)
         </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.IpAddress)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.IpAddress)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.UserAgent)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.UserAgent)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Location)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Location)
-        </dd>
+        
 
     </dl>
 
@@ -241,8 +165,8 @@
         @Html.AntiForgeryToken()
 
         <div class="form-actions no-color">
-            <input type="submit" value="Delete" class="btn btn-default" /> |
-            @Html.ActionLink("Back to List", "Index")
+            <input type="submit" value="Sil" class="btn btn-primary" /> |
+            @Html.ActionLink("Listeye Geri Dön", "Index")
         </div>
     }
 </div>

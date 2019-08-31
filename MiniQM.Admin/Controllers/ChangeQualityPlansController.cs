@@ -61,10 +61,10 @@ namespace MiniQM.Admin.Controllers
         {
             ViewBag.CertificateId = new SelectList(certificateService.GetAll(), "Id", "Name");
             ViewBag.CriterionId = new SelectList(criterionService.GetAll(), "Id", "Name");
-            ViewBag.MaterialId = new SelectList(materialService.GetAll(), "Id", "Name");
-            ViewBag.QualityPlanId = new SelectList(qualityPlanService.GetAll(), "Id", "Description");
+            ViewBag.MaterialId = new SelectList(materialService.GetAll(), "Id", "Id");
+            ViewBag.QualityPlanId = new SelectList(qualityPlanService.GetAll(), "Id", "Id");
             ViewBag.UnitId = new SelectList(unitService.GetAll(), "Id", "Name");
-            ViewBag.ProductionEquipment = new SelectList(productionEquipmentService.GetAll(), "Id", "Name");
+            ViewBag.ProductionEquipmentId = new SelectList(productionEquipmentService.GetAll(), "Id", "Name");
             return View();
         }
 
@@ -87,7 +87,7 @@ namespace MiniQM.Admin.Controllers
             ViewBag.MaterialId = new SelectList(materialService.GetAll(), "Id", "Name", changeQualityPlan.MaterialId);
             ViewBag.QualityPlanId = new SelectList(qualityPlanService.GetAll(), "Id", "Description", changeQualityPlan.QualityPlanId);
             ViewBag.UnitId = new SelectList(unitService.GetAll(), "Id", "Name", changeQualityPlan.UnitId);
-            ViewBag.ProductionEquipment = new SelectList(productionEquipmentService.GetAll(), "Id", "Name", changeQualityPlan.ProductionEquipmentId);
+            ViewBag.ProductionEquipmentId = new SelectList(productionEquipmentService.GetAll(), "Id", "Name", changeQualityPlan.ProductionEquipmentId);
             return View(changeQualityPlan);
         }
 
@@ -108,7 +108,7 @@ namespace MiniQM.Admin.Controllers
             ViewBag.MaterialId = new SelectList(materialService.GetAll(), "Id", "Name", changeQualityPlan.MaterialId);
             ViewBag.QualityPlanId = new SelectList(qualityPlanService.GetAll(), "Id", "Description", changeQualityPlan.QualityPlanId);
             ViewBag.UnitId = new SelectList(unitService.GetAll(), "Id", "Name", changeQualityPlan.UnitId);
-            ViewBag.ProductionEquipment = new SelectList(productionEquipmentService.GetAll(), "Id", "Name", changeQualityPlan.ProductionEquipmentId);
+            ViewBag.ProductionEquipmentId = new SelectList(productionEquipmentService.GetAll(), "Id", "Name", changeQualityPlan.ProductionEquipmentId);
             return View(changeQualityPlan);
         }
 
@@ -130,7 +130,7 @@ namespace MiniQM.Admin.Controllers
             ViewBag.MaterialId = new SelectList(materialService.GetAll(), "Id", "Name", changeQualityPlan.MaterialId);
             ViewBag.QualityPlanId = new SelectList(qualityPlanService.GetAll(), "Id", "Description", changeQualityPlan.QualityPlanId);
             ViewBag.UnitId = new SelectList(unitService.GetAll(), "Id", "Name", changeQualityPlan.UnitId);
-            ViewBag.ProductionEquipment = new SelectList(productionEquipmentService.GetAll(), "Id", "Name", changeQualityPlan.ProductionEquipmentId);
+            ViewBag.ProductionEquipmentId = new SelectList(productionEquipmentService.GetAll(), "Id", "Name", changeQualityPlan.ProductionEquipmentId);
             return View(changeQualityPlan);
         }
 
