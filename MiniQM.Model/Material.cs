@@ -15,6 +15,6 @@ namespace MiniQM.Model
         
         public virtual ICollection<QualityPlan> QualityPlans { get; set; }
         public virtual ICollection<ChangeQualityPlan> ChangeQualityPlans { get; set; }
-
+        public virtual ICollection<MaterialInput> MaterialInputs { get; set; }
     }
 }

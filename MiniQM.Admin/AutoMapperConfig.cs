@@ -23,14 +23,20 @@ namespace MiniQM.Admin
                 dest => dest.Facilities, opt => opt.Ignore()).ForMember(
                 dest => dest.Departments, opt => opt.Ignore()).ForMember(
                 dest => dest.ProductionEquipments, opt => opt.Ignore()).ForMember(
-                dest => dest.SystemUsers, opt => opt.Ignore());
-            
+                dest => dest.SystemUsers, opt => opt.Ignore()).
+                ForMember(dest => dest.Orders, opt => opt.Ignore()).
+                ForMember(dest => dest.PurchasingDepartments, opt => opt.Ignore()).
+                ForMember(dest => dest.Suppliers, opt => opt.Ignore()).
+                ForMember(dest => dest.StockLocations, opt => opt.Ignore());
+
             cfg.CreateMap<Facility, FacilityViewModel>().ForMember(
             dest => dest.CompanyName, opt => opt.MapFrom(src => src.Company.Name)).ReverseMap().
             ForMember(dest => dest.Company, opt => opt.Ignore()).
             ForMember(dest => dest.QualityPlans, opt => opt.Ignore()).
             ForMember(dest => dest.Departments, opt => opt.Ignore()).
-            ForMember(dest => dest.ProductionEquipments, opt => opt.Ignore());
+            ForMember(dest => dest.ProductionEquipments, opt => opt.Ignore()).
+            ForMember(dest => dest.Orders, opt => opt.Ignore()).
+            ForMember(dest => dest.StockLocations, opt => opt.Ignore());
 
             cfg.CreateMap<Department, DepartmentViewModel>().ForMember(
             dest => dest.CompanyName, opt => opt.MapFrom(src => src.Company.Name)).ForMember(
@@ -51,7 +57,8 @@ namespace MiniQM.Admin
 
             cfg.CreateMap<Material, MaterialViewModel>().ReverseMap().ForMember(
                 dest => dest.QualityPlans, opt => opt.Ignore()).ForMember(
-                dest => dest.ChangeQualityPlans, opt => opt.Ignore());
+                dest => dest.ChangeQualityPlans, opt => opt.Ignore()).
+                ForMember(dest => dest.MaterialInputs, opt => opt.Ignore());
 
             cfg.CreateMap<Position, PositionViewModel>().ForMember(
             dest => dest.DepartmentName, opt => opt.MapFrom(src => src.Department.Name)).ReverseMap().

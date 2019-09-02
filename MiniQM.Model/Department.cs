@@ -23,5 +23,6 @@ namespace MiniQM.Model
 
         public virtual ICollection<Position> Positions { get; set; }
         public virtual ICollection<SystemUser> SystemUsers { get; set; }
+        
     }
 }

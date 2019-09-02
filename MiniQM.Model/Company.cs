@@ -17,5 +17,9 @@ namespace MiniQM.Model
         public virtual ICollection<Department> Departments { get; set; }
         public virtual ICollection<ProductionEquipment> ProductionEquipments { get; set; }
         public virtual ICollection<SystemUser> SystemUsers { get; set; }
+        public virtual ICollection<Order> Orders { get; set; }
+        public virtual ICollection<PurchasingDepartment> PurchasingDepartments { get; set; }
+        public virtual ICollection<Supplier> Suppliers { get; set; }
+        public virtual ICollection<StockLocation> StockLocations { get; set; }
     }
 }

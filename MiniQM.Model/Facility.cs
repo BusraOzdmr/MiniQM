@@ -18,5 +18,7 @@ namespace MiniQM.Model
         public virtual ICollection<QualityPlan> QualityPlans { get; set; }
         public virtual ICollection<Department> Departments { get; set; }
         public virtual ICollection<ProductionEquipment> ProductionEquipments { get; set; }
+        public virtual ICollection<Order> Orders { get; set; }
+        public virtual ICollection<StockLocation> StockLocations { get; set; }
     }
 }
