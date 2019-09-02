@@ -9,7 +9,7 @@ namespace MiniQM.Model
     public class PurchasingDepartment :BaseEntity
     {
         public int CompanyId { get; set; }
-        public Company Company { get; set; }
+        public virtual Company Company { get; set; }
         public string Name { get; set; }
         public virtual ICollection<Order> Orders { get; set; }
     }

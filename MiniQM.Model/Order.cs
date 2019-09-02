@@ -16,9 +16,9 @@ namespace MiniQM.Model
         public int BusinessAreaId { get; set; }
         public virtual BusinessArea BusinessArea { get; set; }
         public int PurchasingDepartmentId { get; set; }
-        public PurchasingDepartment PurchasingDepartment { get; set; }
+        public virtual PurchasingDepartment PurchasingDepartment { get; set; }
         public int OrderTypeId { get; set; }
-        public OrderType OrderType { get; set; }
+        public virtual OrderType OrderType { get; set; }
         public DateTime OrderDate { get; set; }
         public int SupplierId { get; set; }
         public virtual Supplier Supplier { get; set; }
