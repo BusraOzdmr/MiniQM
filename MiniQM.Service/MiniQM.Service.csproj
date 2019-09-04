@@ -41,18 +41,28 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BusinessAreaService.cs" />
     <Compile Include="CertificateService.cs" />
     <Compile Include="ChangeQualityPlanService.cs" />
+    <Compile Include="CityService.cs" />
     <Compile Include="CompanyService.cs" />
+    <Compile Include="CountryService.cs" />
     <Compile Include="CriterionService.cs" />
     <Compile Include="DepartmentService.cs" />
     <Compile Include="FacilityService.cs" />
     <Compile Include="LanguageService.cs" />
+    <Compile Include="MaterialInputService.cs" />
     <Compile Include="MaterialService.cs" />
+    <Compile Include="OrderService.cs" />
+    <Compile Include="OrderTypeService.cs" />
     <Compile Include="PositionService.cs" />
     <Compile Include="ProductionEquipmentService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="PurchasingDepartmentService.cs" />
     <Compile Include="QualityPlanService.cs" />
+    <Compile Include="SectorService.cs" />
+    <Compile Include="StockLocationService.cs" />
+    <Compile Include="SupplierService.cs" />
     <Compile Include="SystemUserService.cs" />
     <Compile Include="UnitService.cs" />
     <Compile Include="UserGroupService.cs" />
