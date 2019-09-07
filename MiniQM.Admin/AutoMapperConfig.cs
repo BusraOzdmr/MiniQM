@@ -187,6 +187,13 @@ namespace MiniQM.Admin
             ForMember(dest => dest.Orders, opt => opt.Ignore()).
             ForMember(dest => dest.Suppliers, opt => opt.Ignore());
 
+            cfg.CreateMap<StockLocation, StockLocationViewModel>().ForMember(
+            dest => dest.CompanyName, opt => opt.MapFrom(src => src.Company.Name)).ForMember(
+            dest => dest.FacilityName, opt => opt.MapFrom(src => src.Facility.Name)).ReverseMap().
+            ForMember(dest => dest.Company, opt => opt.Ignore()).
+            ForMember(dest => dest.MaterialInputs, opt => opt.Ignore()).
+            ForMember(dest => dest.Facility, opt => opt.Ignore());
+
             Mapper.Initialize(cfg);
         }
     }

@@ -47,6 +47,7 @@ namespace MiniQM.Admin
             builder.RegisterType<PurchasingDepartmentService>().As<IPurchasingDepartmentService>();
             builder.RegisterType<SupplierService>().As<ISupplierService>();
             builder.RegisterType<BusinessAreaService>().As<IBusinessAreaService>();
+            builder.RegisterType<StockLocationService>().As<IStockLocationService>();
 
             IContainer container = builder.Build();
             DependencyResolver.SetResolver(new AutofacDependencyResolver(container));

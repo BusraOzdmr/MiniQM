@@ -40,6 +40,7 @@ namespace MiniQM.Data
         public virtual DbSet<PurchasingDepartment> PurchasingDepartments { get; set; }
         public virtual DbSet<Supplier> Suppliers { get; set; }
         public virtual DbSet<BusinessArea> BusinessAreas { get; set; }
+        public virtual DbSet<StockLocation> StockLocations { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
@@ -64,11 +65,9 @@ namespace MiniQM.Data
             new PurchasingDepartmentBuilder(modelBuilder.Entity<PurchasingDepartment>());
             new SupplierBuilder(modelBuilder.Entity<Supplier>());
             new BusinessAreaBuilder(modelBuilder.Entity<BusinessArea>());
+            new StockLocationBuilder(modelBuilder.Entity<StockLocation>());
 
         }
-
-
-        public System.Data.Entity.DbSet<MiniQM.Model.StockLocation> StockLocations { get; set; }
 
         public System.Data.Entity.DbSet<MiniQM.Model.City> Cities { get; set; }
 
