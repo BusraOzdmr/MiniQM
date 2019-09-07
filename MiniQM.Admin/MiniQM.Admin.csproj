@@ -195,6 +195,7 @@
     <Compile Include="Controllers\CertificatesController.cs" />
     <Compile Include="Controllers\ChangeQualityPlansController.cs" />
     <Compile Include="Controllers\CompaniesController.cs" />
+    <Compile Include="Controllers\CountriesController.cs" />
     <Compile Include="Controllers\CriteriaController.cs" />
     <Compile Include="Controllers\DepartmentsController.cs" />
     <Compile Include="Controllers\FacilitiesController.cs" />
@@ -2181,6 +2182,11 @@
     <Content Include="Views\Sectors\Details.cshtml" />
     <Content Include="Views\Sectors\Edit.cshtml" />
     <Content Include="Views\Sectors\Index.cshtml" />
+    <Content Include="Views\Countries\Create.cshtml" />
+    <Content Include="Views\Countries\Delete.cshtml" />
+    <Content Include="Views\Countries\Details.cshtml" />
+    <Content Include="Views\Countries\Edit.cshtml" />
+    <Content Include="Views\Countries\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
