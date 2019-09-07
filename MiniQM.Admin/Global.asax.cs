@@ -50,6 +50,7 @@ namespace MiniQM.Admin
             builder.RegisterType<StockLocationService>().As<IStockLocationService>();
             builder.RegisterType<SectorService>().As<ISectorService>();
             builder.RegisterType<CountryService>().As<ICountryService>();
+            builder.RegisterType<CityService>().As<ICityService>();
 
             IContainer container = builder.Build();
             DependencyResolver.SetResolver(new AutofacDependencyResolver(container));

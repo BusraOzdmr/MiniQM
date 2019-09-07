@@ -59,6 +59,7 @@
     <Compile Include="Builders\BusinessAreaBuilder.cs" />
     <Compile Include="Builders\CertificateBuilder.cs" />
     <Compile Include="Builders\ChangeQualityPlanBuilder.cs" />
+    <Compile Include="Builders\CityBuilder.cs" />
     <Compile Include="Builders\CompanyBuilder.cs" />
     <Compile Include="Builders\CountryBuilder.cs" />
     <Compile Include="Builders\CriterionBuilder.cs" />
@@ -135,6 +136,10 @@
     <Compile Include="Migrations\201909071955304_InitialCreate14.Designer.cs">
       <DependentUpon>201909071955304_InitialCreate14.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201909072018483_InitialCreate15.cs" />
+    <Compile Include="Migrations\201909072018483_InitialCreate15.Designer.cs">
+      <DependentUpon>201909072018483_InitialCreate15.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repository.cs" />
@@ -192,6 +197,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201909071955304_InitialCreate14.resx">
       <DependentUpon>201909071955304_InitialCreate14.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201909072018483_InitialCreate15.resx">
+      <DependentUpon>201909072018483_InitialCreate15.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

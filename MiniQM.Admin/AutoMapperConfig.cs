@@ -201,6 +201,11 @@ namespace MiniQM.Admin
             ForMember(dest => dest.Cities, opt => opt.Ignore()).
             ForMember(dest => dest.Suppliers, opt => opt.Ignore());
 
+            cfg.CreateMap<City, CityViewModel>().ForMember(
+           dest => dest.CountryName, opt => opt.MapFrom(src => src.Country.Name)).ReverseMap().
+           ForMember(dest => dest.Country, opt => opt.Ignore()).
+           ForMember(dest => dest.Suppliers, opt => opt.Ignore());
+
             Mapper.Initialize(cfg);
         }
     }
