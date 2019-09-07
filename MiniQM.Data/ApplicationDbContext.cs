@@ -41,6 +41,7 @@ namespace MiniQM.Data
         public virtual DbSet<Supplier> Suppliers { get; set; }
         public virtual DbSet<BusinessArea> BusinessAreas { get; set; }
         public virtual DbSet<StockLocation> StockLocations { get; set; }
+        public virtual DbSet<Sector> Sectors { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
@@ -66,6 +67,7 @@ namespace MiniQM.Data
             new SupplierBuilder(modelBuilder.Entity<Supplier>());
             new BusinessAreaBuilder(modelBuilder.Entity<BusinessArea>());
             new StockLocationBuilder(modelBuilder.Entity<StockLocation>());
+            new SectorBuilder(modelBuilder.Entity<Sector>());
 
         }
 
@@ -73,6 +75,5 @@ namespace MiniQM.Data
 
         public System.Data.Entity.DbSet<MiniQM.Model.Country> Countries { get; set; }
 
-        public System.Data.Entity.DbSet<MiniQM.Model.Sector> Sectors { get; set; }
     }
 }

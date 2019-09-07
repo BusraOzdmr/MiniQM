@@ -194,6 +194,9 @@ namespace MiniQM.Admin
             ForMember(dest => dest.MaterialInputs, opt => opt.Ignore()).
             ForMember(dest => dest.Facility, opt => opt.Ignore());
 
+            cfg.CreateMap<Sector, SectorViewModel>().ReverseMap().            
+            ForMember(dest => dest.Suppliers, opt => opt.Ignore());
+
             Mapper.Initialize(cfg);
         }
     }

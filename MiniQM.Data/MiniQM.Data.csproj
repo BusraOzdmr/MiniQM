@@ -72,6 +72,7 @@
     <Compile Include="Builders\ProductionEquipmentBuilder.cs" />
     <Compile Include="Builders\PurchasingDepartmentBuilder.cs" />
     <Compile Include="Builders\QualityPlanBuilder.cs" />
+    <Compile Include="Builders\SectorBuilder.cs" />
     <Compile Include="Builders\StockLocationBuilder.cs" />
     <Compile Include="Builders\SupplierBuilder.cs" />
     <Compile Include="Builders\SystemUserBuilder.cs" />
@@ -125,6 +126,10 @@
     <Compile Include="Migrations\201909071726362_InitialCreate12.Designer.cs">
       <DependentUpon>201909071726362_InitialCreate12.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201909071934403_InitialCreate13.cs" />
+    <Compile Include="Migrations\201909071934403_InitialCreate13.Designer.cs">
+      <DependentUpon>201909071934403_InitialCreate13.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repository.cs" />
@@ -176,6 +181,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201909071726362_InitialCreate12.resx">
       <DependentUpon>201909071726362_InitialCreate12.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201909071934403_InitialCreate13.resx">
+      <DependentUpon>201909071934403_InitialCreate13.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

@@ -209,6 +209,7 @@
     <Compile Include="Controllers\ProductionEquipmentsController.cs" />
     <Compile Include="Controllers\PurchasingDepartmentsController.cs" />
     <Compile Include="Controllers\QualityPlansController.cs" />
+    <Compile Include="Controllers\SectorsController.cs" />
     <Compile Include="Controllers\StockLocationsController.cs" />
     <Compile Include="Controllers\SuppliersController.cs" />
     <Compile Include="Controllers\SystemUsersController.cs" />
@@ -2175,6 +2176,11 @@
     <Content Include="Views\StockLocations\Details.cshtml" />
     <Content Include="Views\StockLocations\Edit.cshtml" />
     <Content Include="Views\StockLocations\Index.cshtml" />
+    <Content Include="Views\Sectors\Create.cshtml" />
+    <Content Include="Views\Sectors\Delete.cshtml" />
+    <Content Include="Views\Sectors\Details.cshtml" />
+    <Content Include="Views\Sectors\Edit.cshtml" />
+    <Content Include="Views\Sectors\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
