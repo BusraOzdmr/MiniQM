@@ -8,10 +8,10 @@ namespace MiniQM.Model
 {
     public class Supplier: BaseEntity
     {
-        public int CompanyId { get; set; }
+        public int? CompanyId { get; set; }
         public virtual Company Company { get; set; }
         public string Name { get; set; }
-        public int BusinessAreaId { get; set; }
+        public int? BusinessAreaId { get; set; }
         public virtual BusinessArea BusinessArea { get; set; }
         public int SectorId { get; set; }
         public virtual Sector Sector { get; set; }

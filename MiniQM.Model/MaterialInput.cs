@@ -8,18 +8,18 @@ namespace MiniQM.Model
 {
     public class MaterialInput:BaseEntity
     {
-        public int OrderTypeId { get; set; }
+        public int? OrderTypeId { get; set; }
         public virtual OrderType OrderType { get; set; }
 
-        public int OrderId { get; set; }
+        public int? OrderId { get; set; }
         public virtual Order Order { get; set; }
-        public decimal Cost { get; set; } // Kalem
+        public decimal? Cost { get; set; } // Kalem
         public int MaterialId { get; set; }
         public virtual Material Material { get; set; }
-        public decimal InputAmount { get; set; } //Giriş miktarı
-        public decimal SampleAmount { get; set;  } // numune miktarı
+        public decimal? InputAmount { get; set; } //Giriş miktarı
+        public decimal? SampleAmount { get; set;  } // numune miktarı
         public MaterialQuality MaterialQuality { get; set; }
-        public decimal Returned { get; set; } //geri gönderilen
+        public decimal? Returned { get; set; } //geri gönderilen
         public int SupplierId { get; set; }
         public virtual Supplier Supplier { get; set; } //Tedarikçi
         public int StockLocationId { get; set; }

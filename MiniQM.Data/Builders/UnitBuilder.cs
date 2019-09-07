@@ -8,7 +8,7 @@ using MiniQM.Model;
 
 namespace MiniQM.Data.Builders
 {
-    class UnitBuilder
+    public class UnitBuilder
     {
         public UnitBuilder(EntityTypeConfiguration<Unit> builder)
         {

@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace MiniQM.Data.Builders
 {
-    class ProductionEquipmentBuilder
+    public class ProductionEquipmentBuilder
     {
         public ProductionEquipmentBuilder(EntityTypeConfiguration<ProductionEquipment> builder)
         {

@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace MiniQM.Data.Builders
 {
-    class UserGroupBuilder
+    public class UserGroupBuilder
     {
         public UserGroupBuilder(EntityTypeConfiguration<UserGroup> builder)
         {

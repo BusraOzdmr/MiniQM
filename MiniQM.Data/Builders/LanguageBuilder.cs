@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace MiniQM.Data.Builders
 {
-    class LanguageBuilder
+    public class LanguageBuilder
     {
         public LanguageBuilder(EntityTypeConfiguration<Language> builder)
         {

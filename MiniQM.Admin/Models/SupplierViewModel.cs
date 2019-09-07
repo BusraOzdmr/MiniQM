@@ -12,11 +12,11 @@ namespace MiniQM.Admin.Models
         [Display(Name="Tedarikçi")]
         public string Name { get; set; }
         [Display(Name = "Firma")]
-        public int CompanyId { get; set; }
+        public int? CompanyId { get; set; }
         [Display(Name = "Firma")]
         public string CompanyName { get; set; }
         [Display(Name = "İş Alanı")]
-        public int BusinessAreaId { get; set; }
+        public int? BusinessAreaId { get; set; }
         [Display(Name = "İş Alanı")]
         public string BusinessAreaName { get; set; }
         [Display(Name = "Sektör")]

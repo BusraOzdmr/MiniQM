@@ -11,27 +11,27 @@ namespace MiniQM.Admin.Models
     {
         public int Id { get; set; }
         [Display(Name="Sipariş Tipi")]
-        public int OrderTypeId { get; set; }
+        public int? OrderTypeId { get; set; }
         [Display(Name = "Sipariş Tipi")]
         public string OrderTypeName { get; set; }
         [Display(Name = "Sipariş")]
-        public int OrderId { get; set; }
+        public int? OrderId { get; set; }
         [Display(Name = "Sipariş")]
         public string OrderName { get; set; }
         [Display(Name = "Kalem")]
-        public decimal Cost { get; set; } // Kalem
+        public decimal? Cost { get; set; } // Kalem
         [Display(Name = "Malzeme")]
         public int MaterialId { get; set; }
         [Display(Name = "Malzeme")]
         public string MaterialName { get; set; }
         [Display(Name = "Giriş Miktarı")]
-        public decimal InputAmount { get; set; } //Giriş miktarı
+        public decimal? InputAmount { get; set; } //Giriş miktarı
         [Display(Name = "Numune Miktarı")]
-        public decimal SampleAmount { get; set; } // numune miktarı
+        public decimal? SampleAmount { get; set; } // numune miktarı
         [Display(Name = "Nitelik")]
         public MaterialQuality MaterialQuality { get; set; }
         [Display(Name = "Geri Gönderilen")]
-        public decimal Returned { get; set; } //geri gönderilen
+        public decimal? Returned { get; set; } //geri gönderilen
         [Display(Name = "Tedarikçi")]
         public int SupplierId { get; set; }
         [Display(Name = "Tedarikçi")]

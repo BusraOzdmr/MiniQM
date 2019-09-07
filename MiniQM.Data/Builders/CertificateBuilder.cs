@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace MiniQM.Data.Builders
 {
-    class CertificateBuilder
+    public class CertificateBuilder
     {
         public CertificateBuilder(EntityTypeConfiguration<Certificate> builder)
         {

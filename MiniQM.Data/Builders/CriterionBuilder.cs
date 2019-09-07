@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace MiniQM.Data.Builders
 {
-    class CriterionBuilder
+    public class CriterionBuilder
     {
         public CriterionBuilder(EntityTypeConfiguration<Criterion> builder)
         {

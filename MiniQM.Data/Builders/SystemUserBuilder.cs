@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace MiniQM.Data.Builders
 {
-    class SystemUserBuilder
+    public class SystemUserBuilder
     {
         public SystemUserBuilder(EntityTypeConfiguration<SystemUser> builder)
         {

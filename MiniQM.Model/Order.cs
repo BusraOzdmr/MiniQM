@@ -9,9 +9,9 @@ namespace MiniQM.Model
     public class Order : BaseEntity
     {
         public string Name { get; set; }
-        public int CompanyId { get; set; }
+        public int? CompanyId { get; set; }
         public virtual Company Company { get; set; }
-        public int FacilityId { get; set; }
+        public int? FacilityId { get; set; }
         public virtual Facility Facility { get; set; }
         public int BusinessAreaId { get; set; }
         public virtual BusinessArea BusinessArea { get; set; }

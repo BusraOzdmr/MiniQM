@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace MiniQM.Data.Builders
 {
-    class QualityPlanBuilder
+    public class QualityPlanBuilder
     {
         public QualityPlanBuilder(EntityTypeConfiguration<QualityPlan> builder)
         {

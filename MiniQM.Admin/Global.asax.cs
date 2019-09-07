@@ -41,6 +41,12 @@ namespace MiniQM.Admin
             builder.RegisterType<UnitService>().As<IUnitService>();
             builder.RegisterType<ProductionEquipmentService>().As<IProductionEquipmentService>();
             builder.RegisterType<CriterionService>().As<ICriterionService>();
+            builder.RegisterType<MaterialInputService>().As<IMaterialInputService>();
+            builder.RegisterType<OrderService>().As<IOrderService>();
+            builder.RegisterType<OrderTypeService>().As<IOrderTypeService>();
+            builder.RegisterType<PurchasingDepartmentService>().As<IPurchasingDepartmentService>();
+            builder.RegisterType<SupplierService>().As<ISupplierService>();
+            builder.RegisterType<BusinessAreaService>().As<IBusinessAreaService>();
 
             IContainer container = builder.Build();
             DependencyResolver.SetResolver(new AutofacDependencyResolver(container));

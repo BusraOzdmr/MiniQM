@@ -131,6 +131,62 @@ namespace MiniQM.Admin
            ForMember(dest => dest.UserGroup, opt => opt.Ignore()).
            ForMember(dest => dest.ChangeQualityPlans, opt => opt.Ignore());
 
+            cfg.CreateMap<MaterialInput, MaterialInputViewModel>().ForMember(
+           dest => dest.OrderTypeName, opt => opt.MapFrom(src => src.OrderType.Name)).ForMember(
+           dest => dest.OrderName, opt => opt.MapFrom(src => src.Order.Name)).ForMember(
+           dest => dest.MaterialName, opt => opt.MapFrom(src => src.Material.Name)).ForMember(
+           dest => dest.SupplierName, opt => opt.MapFrom(src => src.Supplier.Name)).ForMember(
+           dest => dest.StockLocationName, opt => opt.MapFrom(src => src.StockLocation.Name)).ReverseMap().
+           ForMember(dest => dest.OrderType, opt => opt.Ignore()).
+           ForMember(dest => dest.Order, opt => opt.Ignore()).
+           ForMember(dest => dest.Material, opt => opt.Ignore()).
+           ForMember(dest => dest.Supplier, opt => opt.Ignore()).
+           ForMember(dest => dest.StockLocation, opt => opt.Ignore());
+
+            cfg.CreateMap<Order, OrderViewModel>().ForMember(
+          dest => dest.OrderTypeName, opt => opt.MapFrom(src => src.OrderType.Name)).ForMember(
+          dest => dest.CompanyName, opt => opt.MapFrom(src => src.Company.Name)).ForMember(
+          dest => dest.FacilityName, opt => opt.MapFrom(src => src.Facility.Name)).ForMember(
+          dest => dest.SupplierName, opt => opt.MapFrom(src => src.Supplier.Name)).ForMember(
+          dest => dest.PurchasingDepartmentName, opt => opt.MapFrom(src => src.PurchasingDepartment.Name)).ForMember(
+          dest => dest.BusinessAreaName, opt => opt.MapFrom(src => src.BusinessArea.Name)).ReverseMap().
+          ForMember(dest => dest.OrderType, opt => opt.Ignore()).
+          ForMember(dest => dest.Company, opt => opt.Ignore()).
+          ForMember(dest => dest.Facility, opt => opt.Ignore()).
+          ForMember(dest => dest.Supplier, opt => opt.Ignore()).
+          ForMember(dest => dest.PurchasingDepartment, opt => opt.Ignore()).
+          ForMember(dest => dest.MaterialInputs, opt => opt.Ignore()).
+          ForMember(dest => dest.BusinessArea, opt => opt.Ignore());
+
+            cfg.CreateMap<OrderType, OrderTypeViewModel>().ReverseMap().
+           ForMember(dest => dest.MaterialInputs, opt => opt.Ignore()).
+           ForMember(dest => dest.Orders, opt => opt.Ignore());
+
+            cfg.CreateMap<PurchasingDepartment, PurchasingDepartmentViewModel>().ForMember(
+           dest => dest.CompanyName, opt => opt.MapFrom(src => src.Company.Name)).ReverseMap().
+           ForMember(dest => dest.Company, opt => opt.Ignore()).
+           ForMember(dest => dest.Orders, opt => opt.Ignore());
+
+            cfg.CreateMap<Supplier, SupplierViewModel>().ForMember(
+            dest => dest.CompanyName, opt => opt.MapFrom(src => src.Company.Name)).ForMember(
+            dest => dest.BusinessAreaName, opt => opt.MapFrom(src => src.BusinessArea.Name)).ForMember(
+            dest => dest.SectorName, opt => opt.MapFrom(src => src.Sector.Name)).ForMember(
+            dest => dest.CountryName, opt => opt.MapFrom(src => src.Country.Name)).ForMember(
+            dest => dest.CityName, opt => opt.MapFrom(src => src.City.Name)).ReverseMap().
+            ForMember(dest => dest.Company, opt => opt.Ignore()).
+            ForMember(dest => dest.BusinessArea, opt => opt.Ignore()).
+            ForMember(dest => dest.Sector, opt => opt.Ignore()).
+            ForMember(dest => dest.Country, opt => opt.Ignore()).
+            ForMember(dest => dest.City, opt => opt.Ignore()).
+            ForMember(dest => dest.MaterialInputs, opt => opt.Ignore()).
+            ForMember(dest => dest.Orders, opt => opt.Ignore());
+
+            cfg.CreateMap<BusinessArea, BusinessAreaViewModel>().ForMember(
+            dest => dest.MainAreaName, opt => opt.MapFrom(src => src.MainArea.Name)).ReverseMap().
+            ForMember(dest => dest.ChildAreas, opt => opt.Ignore()).
+            ForMember(dest => dest.Orders, opt => opt.Ignore()).
+            ForMember(dest => dest.Suppliers, opt => opt.Ignore());
+
             Mapper.Initialize(cfg);
         }
     }

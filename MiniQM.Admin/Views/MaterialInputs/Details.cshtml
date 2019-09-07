@@ -1,0 +1,126 @@
+﻿@model MiniQM.Admin.Models.MaterialInputViewModel
+
+@{
+    ViewBag.Title = "Detaylar";
+}
+
+<h2>Detaylar</h2>
+
+<div>
+    <h4>Mal Giriş Detay</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.MaterialName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MaterialName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.OrderName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.OrderName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.OrderTypeName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.OrderTypeName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.StockLocationName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.StockLocationName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SupplierName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SupplierName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Cost)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Cost)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.InputAmount)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.InputAmount)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SampleAmount)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SampleAmount)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MaterialQuality)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MaterialQuality)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Returned)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Returned)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Checked)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Checked)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.QualityControlStatus)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.QualityControlStatus)
+        </dd>
+
+        
+
+        <dt>
+            @Html.DisplayNameFor(model => model.IsActive)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.IsActive)
+        </dd>
+
+        
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Düzenle", "Edit", new { id = Model.Id }) |
+    @Html.ActionLink("Listeye Geri Dön", "Index")
+</p>

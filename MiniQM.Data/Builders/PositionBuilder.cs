@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace MiniQM.Data.Builders
 {
-    class PositionBuilder
+    public class PositionBuilder
     {
         public PositionBuilder(EntityTypeConfiguration<Position> builder)
         {

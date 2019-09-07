@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace MiniQM.Data.Builders
 {
-    class MaterialBuilder
+    public class MaterialBuilder
     {
         public MaterialBuilder(EntityTypeConfiguration<Material> builder)
         {

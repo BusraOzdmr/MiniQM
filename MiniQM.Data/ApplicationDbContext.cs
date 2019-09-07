@@ -34,7 +34,12 @@ namespace MiniQM.Data
         public virtual DbSet<Criterion> Criterions { get; set; }
         public virtual DbSet<Unit> Units { get; set; }
         public virtual DbSet<ProductionEquipment> ProductionEquipments { get; set; }
-
+        public virtual DbSet<MaterialInput> MaterialInputs { get; set; }
+        public virtual DbSet<Order> Orders { get; set; }
+        public virtual DbSet<OrderType> OrderTypes { get; set; }
+        public virtual DbSet<PurchasingDepartment> PurchasingDepartments { get; set; }
+        public virtual DbSet<Supplier> Suppliers { get; set; }
+        public virtual DbSet<BusinessArea> BusinessAreas { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
@@ -53,13 +58,22 @@ namespace MiniQM.Data
             new UnitBuilder(modelBuilder.Entity<Unit>());
             new ProductionEquipmentBuilder(modelBuilder.Entity<ProductionEquipment>());
             new CriterionBuilder(modelBuilder.Entity<Criterion>());
+            new MaterialInputBuilder(modelBuilder.Entity<MaterialInput>());
+            new OrderBuilder(modelBuilder.Entity<Order>());
+            new OrderTypeBuilder(modelBuilder.Entity<OrderType>());
+            new PurchasingDepartmentBuilder(modelBuilder.Entity<PurchasingDepartment>());
+            new SupplierBuilder(modelBuilder.Entity<Supplier>());
+            new BusinessAreaBuilder(modelBuilder.Entity<BusinessArea>());
 
-        }        
+        }
 
-        
 
-        
+        public System.Data.Entity.DbSet<MiniQM.Model.StockLocation> StockLocations { get; set; }
 
-       
+        public System.Data.Entity.DbSet<MiniQM.Model.City> Cities { get; set; }
+
+        public System.Data.Entity.DbSet<MiniQM.Model.Country> Countries { get; set; }
+
+        public System.Data.Entity.DbSet<MiniQM.Model.Sector> Sectors { get; set; }
     }
 }
