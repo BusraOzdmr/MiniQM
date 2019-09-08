@@ -9,7 +9,7 @@
 <p>
     <a href="@Url.Action("Create")" class="btn btn-primary">Yeni Malzeme</a>
 </p>
-<table class="table">
+<table class="table" id="myTable">
     <tr>
         <th>
             @Html.DisplayNameFor(model => model.Name)
@@ -19,7 +19,7 @@
             @Html.DisplayNameFor(model => model.IsActive)
         </th>
 
-        <th>Eylemler</th>
+        <th class="all">Eylemler</th>
     </tr>
 
 @foreach (var item in Model) {
@@ -31,7 +31,7 @@
             @Html.DisplayFor(modelItem => item.IsActive)
         </td>
 
-        <td>
+        <td class="text-nowrap">
             @Html.ActionLink("Düzenle", "Edit", new { id=item.Id }) |
             @Html.ActionLink("Detay", "Details", new { id=item.Id }) |
             @Html.ActionLink("Sil", "Delete", new { id=item.Id })

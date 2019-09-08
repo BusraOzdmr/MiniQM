@@ -1,15 +1,15 @@
 ﻿@model IEnumerable<MiniQM.Admin.Models.DepartmentViewModel>
 
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "Bölümler";
 }
 
-<h2>Index</h2>
+<h2>Bölümler</h2>
 
 <p>
-    @Html.ActionLink("Create New", "Create")
+    <a href="@Url.Action("Create")" class="btn btn-primary">Yeni Bölüm</a>
 </p>
-<table class="table">
+<table class="table" id="myTable">
     <tr>
         <th>
             @Html.DisplayNameFor(model => model.CompanyName)
@@ -23,7 +23,7 @@
         <th>
             @Html.DisplayNameFor(model => model.IsActive)
         </th>
-        <th></th>
+        <th class="all">Eylemler</th>
     </tr>
 
 @foreach (var item in Model) {
@@ -40,10 +40,10 @@
         <td>
             @Html.DisplayFor(modelItem => item.IsActive)
         </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.Id }) |
-            @Html.ActionLink("Details", "Details", new { id=item.Id }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.Id })
+        <td class="text-nowrap">
+            @Html.ActionLink("Düzenle", "Edit", new { id=item.Id }) |
+            @Html.ActionLink("Detay", "Details", new { id=item.Id }) |
+            @Html.ActionLink("Sil", "Delete", new { id=item.Id })
         </td>
     </tr>
 }
