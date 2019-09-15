@@ -1218,6 +1218,7 @@
     <Content Include="img\gallery\9s.jpg" />
     <Content Include="img\headphones.jpg" />
     <Content Include="img\html_logo.png" />
+    <Content Include="img\iconn.png" />
     <Content Include="img\landing\avatar1.jpg" />
     <Content Include="img\landing\avatar2.jpg" />
     <Content Include="img\landing\avatar3.jpg" />
@@ -1236,7 +1237,6 @@
     <Content Include="img\landing\perspective.png" />
     <Content Include="img\landing\shattered.png" />
     <Content Include="img\landing\word_map.png" />
-    <Content Include="img\medal.png" />
     <Content Include="img\meteor_logo.png" />
     <Content Include="img\mvc_logo.png" />
     <Content Include="img\off_canvas.jpg" />
