@@ -14,6 +14,7 @@ using MiniQM.Service;
 
 namespace MiniQM.Admin.Controllers
 {
+    [Authorize]
     public class QualityPlansController : Controller
     {
         private readonly ICompanyService companyService;
@@ -34,7 +35,12 @@ namespace MiniQM.Admin.Controllers
             var qualityPlans = Mapper.Map<IEnumerable<QualityPlanViewModel>>(qualityPlanService.GetAll());
             return View(qualityPlans);
         }
-
+        [HttpPost]
+        public ActionResult GetFacilities(int companyId)
+        {
+            var facilities = Mapper.Map<IEnumerable<FacilityViewModel>>(facilityService.GetAllByCompanyId(companyId));
+            return Json(facilities);
+        }
         // GET: QualityPlans/Details/5
         public ActionResult Details(int? id)
         {
@@ -136,7 +142,9 @@ namespace MiniQM.Admin.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
-            qualityPlanService.Delete(id);
+            QualityPlan qualityPlan = Mapper.Map<QualityPlan>(qualityPlanService.Get(id));
+            qualityPlan.IsDeleted = true;
+            qualityPlanService.Update(qualityPlan);
             return RedirectToAction("Index");
         }
 

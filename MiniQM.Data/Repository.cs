@@ -35,11 +35,7 @@ namespace MiniQM.Data
         public void Delete(T entity)
         {
             entity.IsDeleted = true;
-            entity.DeletedAt = DateTime.Now;
-            entity.DeletedBy = httpContext.User.Identity.GetUserId();
-            entity.IpAddress = httpContext.Request.UserHostAddress;
-            entity.UserAgent = httpContext.Request.UserAgent;
-            entity.Location = ""; // ip veritabanı indirilip üzerinde sorgu yapılarak lokasyon belirlenecek
+            
             Update(entity);
         }
 
@@ -84,8 +80,7 @@ namespace MiniQM.Data
         }
 
         public void Insert(T entity)
-        {
-            
+        {            
             entity.CreatedAt = DateTime.Now;
             entity.CreatedBy = httpContext.User.Identity.GetUserId();
             entity.UpdatedAt = entity.CreatedAt;

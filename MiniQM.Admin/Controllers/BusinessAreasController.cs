@@ -14,6 +14,7 @@ using MiniQM.Service;
 
 namespace MiniQM.Admin.Controllers
 {
+    [Authorize]
     public class BusinessAreasController : Controller
     {
         private readonly IBusinessAreaService businessAreaService ;
@@ -122,7 +123,9 @@ namespace MiniQM.Admin.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
-            businessAreaService.Delete(id);
+            BusinessArea businessArea = Mapper.Map<BusinessArea>(businessAreaService.Get(id));
+            businessArea.IsDeleted = true;
+            businessAreaService.Update(businessArea);
             return RedirectToAction("Index");
         }
 

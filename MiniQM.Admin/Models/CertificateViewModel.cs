@@ -16,7 +16,7 @@ namespace MiniQM.Admin.Models
         [DataType(DataType.MultilineText)]
         [MaxLength(4000)]
         public string Description { get; set; }
-        [Display(Name = "Açıklama")]
+        [Display(Name = "Aktif mi?")]
         public bool IsActive { get; set; }
 
     }

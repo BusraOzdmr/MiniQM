@@ -1,76 +1,80 @@
 ﻿@model IEnumerable<MiniQM.Admin.Models.QualityPlanViewModel>
-
+@using MiniQM.Admin.Extensions
+@using System.ComponentModel.DataAnnotations
 @{
     ViewBag.Title = "Kalite Planı";
 }
 
-    <h2>Kalite Planı</h2>
+<h2>Kalite Planı</h2>
 
 <p>
     <a href="@Url.Action("Create")" class="btn btn-primary">Yeni Kalite Planı</a>
 </p>
 <table class="table" id="myTable">
-    <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.CompanyName)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.FacilityName)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.MaterialName)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Description)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.StartDate)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.ClosedDate)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.IsProcess)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.IsActive)
-        </th>
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.CompanyName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.FacilityName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.MaterialName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Description)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.StartDate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ClosedDate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.IsProcess)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.IsActive)
+            </th>
 
-        <th class="all">Eylemler</th>
-    </tr>
-
-@foreach (var item in Model) {
-<tr>
-    <td>
-        @Html.DisplayFor(modelItem => item.CompanyName)
-    </td>
-    <td>
-        @Html.DisplayFor(modelItem => item.FacilityName)
-    </td>
-    <td>
-        @Html.DisplayFor(modelItem => item.MaterialName)
-    </td>
-    <td>
-        @Html.DisplayFor(modelItem => item.Description)
-    </td>
-    <td>
-        @Html.DisplayFor(modelItem => item.StartDate)
-    </td>
-    <td>
-        @Html.DisplayFor(modelItem => item.ClosedDate)
-    </td>
-    <td>
-        @Html.DisplayFor(modelItem => item.IsProcess)
-    </td>
-    <td>
-        @Html.DisplayFor(modelItem => item.IsActive)
-    </td>
-    <td class="text-nowrap">
-        @Html.ActionLink("Düzenle", "Edit", new { id = item.Id }) |
-        @Html.ActionLink("Detay", "Details", new { id = item.Id }) |
-        @Html.ActionLink("Sil", "Delete", new { id = item.Id })
-    </td>
-</tr>
-}
-
+            <th class="all">Eylemler</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.CompanyName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.FacilityName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.MaterialName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Description)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.StartDate)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ClosedDate)
+                </td>
+                <td>
+                    @(item.IsProcess.GetAttribute<DisplayAttribute>().Name)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.IsActive)
+                </td>
+                <td class="text-nowrap">
+                    @Html.ActionLink("Düzenle", "Edit", new { id = item.Id }) |
+                    @Html.ActionLink("Detay", "Details", new { id = item.Id }) |
+                    @Html.ActionLink("Sil", "Delete", new { id = item.Id })
+                </td>
+            </tr>
+        }
+    </tbody>
 </table>

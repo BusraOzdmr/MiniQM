@@ -14,6 +14,7 @@ using MiniQM.Service;
 
 namespace MiniQM.Admin.Controllers
 {
+    [Authorize]
     public class SectorsController : Controller
     {
         private readonly ISectorService sectorService;
@@ -118,7 +119,9 @@ namespace MiniQM.Admin.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
-            sectorService.Delete(id);
+            Sector sector = Mapper.Map<Sector>(sectorService.Get(id));
+            sector.IsDeleted = true;
+            sectorService.Update(sector);
             return RedirectToAction("Index");
         }
 

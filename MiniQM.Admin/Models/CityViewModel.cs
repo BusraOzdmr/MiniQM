@@ -11,7 +11,7 @@ namespace MiniQM.Admin.Models
         public int Id { get; set; }
         [Display(Name = "Şehir")]
         public string Name { get; set; }
-        [Display(Name = "Ülke")]
+        
         public int CountryId { get; set; }
         [Display(Name = "Ülke")]
         public string CountryName { get; set; }

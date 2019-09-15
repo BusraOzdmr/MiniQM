@@ -1,62 +1,65 @@
 ﻿@using MiniQM.Admin.Models
 @model LoginViewModel
 @{
-    ViewBag.Title = "Oturum aç";
+    
+    Layout = "~/Views/Shared/_LoginLayout.cshtml";
 }
 
-<h2>@ViewBag.Title.</h2>
-<div class="row">
-    <div class="col-md-8">
-        <section id="loginForm">
-            @using (Html.BeginForm("Login", "Account", new { ReturnUrl = ViewBag.ReturnUrl }, FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
-            {
-                @Html.AntiForgeryToken()
-                <h4>Oturum açmak için bir yerel hesap kullanın.</h4>
-                <hr />
-                @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-                <div class="form-group">
-                    @Html.LabelFor(m => m.Email, new { @class = "col-md-2 control-label" })
-                    <div class="col-md-10">
-                        @Html.TextBoxFor(m => m.Email, new { @class = "form-control" })
-                        @Html.ValidationMessageFor(m => m.Email, "", new { @class = "text-danger" })
+    <section id="loginForm">
+        @using (Html.BeginForm("Login", "Account", new { ReturnUrl = ViewBag.ReturnUrl }, FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
+        {
+            @Html.AntiForgeryToken()
+
+            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        <div class="limitter">
+            <div class="middle-box text-center loginscreen animated fadeInDown">
+                <div>
+
+                    <div>
+
+                        <h1 class="logo-name">QM</h1>
+
                     </div>
-                </div>
-                <div class="form-group">
-                    @Html.LabelFor(m => m.Password, new { @class = "col-md-2 control-label" })
-                    <div class="col-md-10">
-                        @Html.PasswordFor(m => m.Password, new { @class = "form-control" })
-                        @Html.ValidationMessageFor(m => m.Password, "", new { @class = "text-danger" })
-                    </div>
-                </div>
-                <div class="form-group">
-                    <div class="col-md-offset-2 col-md-10">
-                        <div class="checkbox">
-                            @Html.CheckBoxFor(m => m.RememberMe)
-                            @Html.LabelFor(m => m.RememberMe)
-                        </div>
-                    </div>
-                </div>
-                <div class="form-group">
-                    <div class="col-md-offset-2 col-md-10">
-                        <input type="submit" value="Oturum aç" class="btn btn-default" />
-                    </div>
-                </div>
-                <p>
-                    @Html.ActionLink("Yeni bir kullanıcı olarak kaydol", "Register")
-                </p>
-                @* Parola sıfırlama işlevi için hesap doğrulama etkinleştirildiğinde bunu etkinleştirin
+                    <h3>Welcome to MiniQM</h3>
                     <p>
-                        @Html.ActionLink("Parolanızı mı unuttunuz?", "ForgotPassword")
-                    </p>*@
-            }
-        </section>
-    </div>
-    <div class="col-md-4">
-        <section id="socialLoginForm">
-            @Html.Partial("_ExternalLoginsListPartial", new ExternalLoginListViewModel { ReturnUrl = ViewBag.ReturnUrl })
-        </section>
-    </div>
-</div>
+
+                    </p>
+                    <p> </p>
+                    <form class="m-t" role="form" action="index.html">
+                        @*<div class="form-group">
+            <input type="email" class="form-control" placeholder="Kullanıcı Adı" required="">
+        </div>*@
+                        <div class="input-group">
+                            @Html.TextBoxFor(m => m.Email, new { @class = "form-control ", placeholder = "E-Posta" })
+                            @Html.ValidationMessageFor(m => m.Email, "", new { @class = "text-danger" })
+                            <span class="focus-input100-1"></span>
+                            <span class="focus-input100-2"></span>
+                        </div>
+                        <div class="input-group">
+                            @Html.PasswordFor(m => m.Password, new { @class = "form-control input100", placeholder = "Parola" })
+                            @Html.ValidationMessageFor(m => m.Password, "", new { @class = "text-danger" })
+                            <span class="focus-input100-1"></span>
+                            <span class="focus-input100-2"></span>
+                        </div>
+                        <br />
+                        @*<button class="btn btn-primary block full-width m-b">Giriş Yap</button>*@
+                        <div>
+                            <button class="btn btn-primary block full-width m-b">
+                               Giriş
+                            </button>
+                        </div>
+                        <a href="@Url.Action("ForgotPassword","Account")"><small>Şifremi Unuttum</small></a>
+                        <p class="text-muted text-center"><small></small></p>
+                        <a class="btn btn-sm btn-white btn-block" href="@Url.Action("Register","Account")">Hesap Oluştur</a>
+                    </form>
+                    <p class="m-t" style="text-align:center"> <small>MiniQM &copy; 2019</small> </p>
+                </div>
+            </div>
+        </div>
+        }
+    </section>
+    
+    
 
 @section Scripts {
     @Scripts.Render("~/bundles/jqueryval")

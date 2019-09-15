@@ -14,6 +14,7 @@ using MiniQM.Service;
 
 namespace MiniQM.Admin.Controllers
 {
+    [Authorize]
     public class OrdersController : Controller
     {
         private readonly IOrderService orderService;
@@ -154,7 +155,9 @@ namespace MiniQM.Admin.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
-            orderService.Delete(id);
+            Order order = Mapper.Map<Order>(orderService.Get(id));
+            order.IsDeleted = true;
+            orderService.Update(order);
             return RedirectToAction("Index");
         }
 

@@ -14,6 +14,7 @@ using MiniQM.Service;
 
 namespace MiniQM.Admin.Controllers
 {
+    [Authorize]
     public class DepartmentsController : Controller
     {
         private readonly ICompanyService companyService;
@@ -35,6 +36,12 @@ namespace MiniQM.Admin.Controllers
         }
 
         // GET: Departments/Details/5
+        [HttpPost]
+        public ActionResult GetFacilities(int companyId)
+        {
+            var facilities = Mapper.Map<IEnumerable<FacilityViewModel>>(facilityService.GetAllByCompanyId(companyId));
+            return Json(facilities);
+        }
         public ActionResult Details(int? id)
         {
             if (id == null)
@@ -131,7 +138,9 @@ namespace MiniQM.Admin.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
-            departmentService.Delete(id);
+            Department department = Mapper.Map<Department>(departmentService.Get(id));
+            department.IsDeleted = true;
+            departmentService.Update(department);
             return RedirectToAction("Index");
         }
 

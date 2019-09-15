@@ -39,24 +39,11 @@
             <nav class="navbar-default navbar-static-side" role="navigation">
                 <div class="sidebar-collapse">
                     <ul class="nav metismenu" id="side-menu">
-                        <li class="nav-header">
-                            <div class="dropdown profile-element">
-                                <img alt="image" class="rounded-circle" src="/img/buspp.JPG" />
-                                <a data-toggle="dropdown" class="dropdown-toggle" href="#">
-                                    <span class="block m-t-xs font-bold">Büşra Özdemir</span>
-                                    <span class="text-muted text-xs block">Kalite Kontrol Sorumlusu <b class="caret"></b></span>
-                                </a>
-                                <ul class="dropdown-menu animated fadeInRight m-t-xs">
-                                    <li><a class="dropdown-item" href="profile.html">Profil</a></li>
-                                    <li><a class="dropdown-item" href="contacts.html">İletişim</a></li>
-                                    <li><a class="dropdown-item" href="mailbox.html">E-Posta</a></li>
-                                    <li class="dropdown-divider"></li>
-                                    <li><a class="dropdown-item" href="login.html">Çıkış</a></li>
-                                </ul>
-                            </div>
-                            <div class="logo-element">
-                                MiniQM
-                            </div>
+                        <li class="nav-header">                            
+                            <div class="logo-element">MiniQM </div>
+                        </li>
+                        <li>
+                            @Html.Partial("_LoginPartial")
                         </li>
                         <li>
                             <a href="@Url.Action("Index","Units")"><i class="fa fa-files-o"></i> <span class="nav-label">Birimler</span> </a>
@@ -797,16 +784,7 @@
 
     <script>
         $(document).ready(function () {
-            setTimeout(function () {
-                toastr.options = {
-                    closeButton: true,
-                    progressBar: true,
-                    showMethod: 'slideDown',
-                    timeOut: 4000
-                };
-                toastr.success('', 'MiniQM Modülüne Hoş Geldiniz');
-
-            }, 1300);
+            
 
 
             var data1 = [

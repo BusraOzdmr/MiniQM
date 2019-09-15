@@ -14,6 +14,7 @@ using MiniQM.Service;
 
 namespace MiniQM.Admin.Controllers
 {
+    [Authorize]
     public class UnitsController : Controller
     {
         private readonly IUnitService unitService;
@@ -122,8 +123,10 @@ namespace MiniQM.Admin.Controllers
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
-        {
-            unitService.Delete(id);
+        {            
+            Unit unit = Mapper.Map<Unit>(unitService.Get(id));
+            unit.IsDeleted = true;
+            unitService.Update(unit);
             return RedirectToAction("Index");
         }
 

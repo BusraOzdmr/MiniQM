@@ -10,132 +10,136 @@
         <a href="@Url.Action("Create")" class="btn btn-primary">Kalite Kontrol Planı Detay Ekle</a>
     </p>
 <table class="table" id="myTable">
-    <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.QualityPlanId)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.CertificateName)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.CriterionName)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.MaterialId)
-        </th>
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.QualityPlanId)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CertificateName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CriterionName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.MaterialId)
+            </th>
 
-        <th>
-            @Html.DisplayNameFor(model => model.UnitName)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.IsDynamic)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.IsDetailed)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Level)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Contrafactor)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.AQL)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.ProductionEquipmentName)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.NominalSize)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.MaxSize)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.MinSize)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.PurchasingControl)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.ProductionControl)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Description)
-        </th>
-        
-        <th>
-            @Html.DisplayNameFor(model => model.IsActive)
-        </th>
-        
-        <th class="all">Eylemler</th>
-    </tr>
+            <th>
+                @Html.DisplayNameFor(model => model.UnitName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.IsDynamic)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.IsDetailed)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Level)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Contrafactor)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.AQL)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ProductionEquipmentName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.NominalSize)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.MaxSize)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.MinSize)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.PurchasingControl)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ProductionControl)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Description)
+            </th>
 
-@foreach (var item in Model) {
-<tr>
-    <td>
-        @Html.DisplayFor(modelItem => item.QualityPlanId)
-    </td>
-    <td>
-        @Html.DisplayFor(modelItem => item.CertificateName)
-    </td>
-    <td>
-        @Html.DisplayFor(modelItem => item.CriterionName)
-    </td>
-    <td>
-        @Html.DisplayFor(modelItem => item.MaterialId)
-    </td>
+            <th>
+                @Html.DisplayNameFor(model => model.IsActive)
+            </th>
 
-    <td>
-        @Html.DisplayFor(modelItem => item.UnitName)
-    </td>
-    <td>
-        @Html.DisplayFor(modelItem => item.IsDynamic)
-    </td>
-    <td>
-        @Html.DisplayFor(modelItem => item.IsDetailed)
-    </td>
-    <td>
-        @Html.DisplayFor(modelItem => item.Level)
-    </td>
-    <td>
-        @Html.DisplayFor(modelItem => item.Contrafactor)
-    </td>
-    <td>
-        @Html.DisplayFor(modelItem => item.AQL)
-    </td>
-    <td>
-        @Html.DisplayFor(modelItem => item.ProductionEquipmentName)
-    </td>
-    <td>
-        @Html.DisplayFor(modelItem => item.NominalSize)
-    </td>
-    <td>
-        @Html.DisplayFor(modelItem => item.MaxSize)
-    </td>
-    <td>
-        @Html.DisplayFor(modelItem => item.MinSize)
-    </td>
-    <td>
-        @Html.DisplayFor(modelItem => item.PurchasingControl)
-    </td>
-    <td>
-        @Html.DisplayFor(modelItem => item.ProductionControl)
-    </td>
-    <td>
-        @Html.DisplayFor(modelItem => item.Description)
-    </td>
-    
-    <td>
-        @Html.DisplayFor(modelItem => item.IsActive)
-    </td>
-    
-    <td class="text-nowrap">
-        @Html.ActionLink("Düzenle", "Edit", new { id = item.Id }) |
-        @Html.ActionLink("Detay", "Details", new { id = item.Id }) |
-        @Html.ActionLink("Sil", "Delete", new { id = item.Id })
-    </td>
-</tr>
-}
+            <th class="all">Eylemler</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.QualityPlanId)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.CertificateName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.CriterionName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.MaterialId)
+                </td>
+
+                <td>
+                    @Html.DisplayFor(modelItem => item.UnitName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.IsDynamic)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.IsDetailed)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Level)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Contrafactor)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.AQL)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ProductionEquipmentName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.NominalSize)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.MaxSize)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.MinSize)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.PurchasingControl)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ProductionControl)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Description)
+                </td>
+
+                <td>
+                    @Html.DisplayFor(modelItem => item.IsActive)
+                </td>
+
+                <td class="text-nowrap">
+                    @Html.ActionLink("Düzenle", "Edit", new { id = item.Id }) |
+                    @Html.ActionLink("Detay", "Details", new { id = item.Id }) |
+                    @Html.ActionLink("Sil", "Delete", new { id = item.Id })
+                </td>
+            </tr>
+        }
+    </tbody>
 
 </table>

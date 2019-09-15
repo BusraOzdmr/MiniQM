@@ -14,6 +14,7 @@ using MiniQM.Service;
 
 namespace MiniQM.Admin.Controllers
 {
+    [Authorize]
     public class PurchasingDepartmentsController : Controller
     {
         private readonly ICompanyService companyService;
@@ -125,7 +126,9 @@ namespace MiniQM.Admin.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
-            purchasingDepartmentService.Delete(id);
+            PurchasingDepartment purchasingDepartment = Mapper.Map <PurchasingDepartment>(purchasingDepartmentService.Get(id));
+            purchasingDepartment.IsDeleted = true;
+            purchasingDepartmentService.Update(purchasingDepartment);
             return RedirectToAction("Index");
         }
 

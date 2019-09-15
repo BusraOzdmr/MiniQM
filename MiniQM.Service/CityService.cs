@@ -31,6 +31,11 @@ namespace MiniQM.Service
             }
         }
 
+        public IEnumerable<City> GetAllByCountryId(int countryId)
+        {
+            return cityRepository.GetAll(x => x.CountryId == countryId, o => o.Name, false);
+        }
+
         public City Get(int id)
         {
             return cityRepository.Get(id);
@@ -57,6 +62,7 @@ namespace MiniQM.Service
     public interface ICityService
     {
         IEnumerable<City> GetAll();
+        IEnumerable<City> GetAllByCountryId(int countryId);
         City Get(int id);
         void Insert(City city);
         void Update(City city);

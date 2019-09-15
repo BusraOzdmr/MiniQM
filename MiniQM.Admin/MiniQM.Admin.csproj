@@ -217,6 +217,7 @@
     <Compile Include="Controllers\SystemUsersController.cs" />
     <Compile Include="Controllers\UnitsController.cs" />
     <Compile Include="Controllers\UserGroupsController.cs" />
+    <Compile Include="Extensions.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -1235,6 +1236,7 @@
     <Content Include="img\landing\perspective.png" />
     <Content Include="img\landing\shattered.png" />
     <Content Include="img\landing\word_map.png" />
+    <Content Include="img\medal.png" />
     <Content Include="img\meteor_logo.png" />
     <Content Include="img\mvc_logo.png" />
     <Content Include="img\off_canvas.jpg" />
@@ -1867,6 +1869,7 @@
     <Content Include="Views\Cities\Details.cshtml" />
     <Content Include="Views\Cities\Edit.cshtml" />
     <Content Include="Views\Cities\Index.cshtml" />
+    <Content Include="Views\Shared\_LoginLayout.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

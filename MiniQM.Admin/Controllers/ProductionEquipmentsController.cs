@@ -14,6 +14,7 @@ using MiniQM.Service;
 
 namespace MiniQM.Admin.Controllers
 {
+    [Authorize]
     public class ProductionEquipmentsController : Controller
     {
         private readonly ICompanyService companyService;
@@ -33,7 +34,12 @@ namespace MiniQM.Admin.Controllers
             var productionEquipments = Mapper.Map<IEnumerable<ProductionEquipmentViewModel>>(productionEquipmentService.GetAll());
             return View(productionEquipments);
         }
-
+        [HttpPost]
+        public ActionResult GetFacilities(int companyId)
+        {
+            var facilities = Mapper.Map<IEnumerable<FacilityViewModel>>(facilityService.GetAllByCompanyId(companyId));
+            return Json(facilities);
+        }
         // GET: ProductionEquipments/Details/5
         public ActionResult Details(int? id)
         {
@@ -135,7 +141,9 @@ namespace MiniQM.Admin.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
-            productionEquipmentService.Delete(id);
+            ProductionEquipment productionEquipment = Mapper.Map<ProductionEquipment>(productionEquipmentService.Get(id));
+            productionEquipment.IsDeleted = true;
+            productionEquipmentService.Update(productionEquipment);
             return RedirectToAction("Index");
         }
 

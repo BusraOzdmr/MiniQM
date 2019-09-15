@@ -14,6 +14,7 @@ using MiniQM.Service;
 
 namespace MiniQM.Admin.Controllers
 {
+    [Authorize]
     public class StockLocationsController : Controller
     {
         private readonly IStockLocationService stockLocationService;
@@ -32,7 +33,12 @@ namespace MiniQM.Admin.Controllers
             var stockLocations = Mapper.Map<IEnumerable<StockLocationViewModel>>(stockLocationService.GetAll());
             return View(stockLocations);
         }
-
+        [HttpPost]
+        public ActionResult GetFacilities(int companyId)
+        {
+            var facilities = Mapper.Map<IEnumerable<FacilityViewModel>>(facilityService.GetAllByCompanyId(companyId));
+            return Json(facilities);
+        }
         // GET: StockLocations/Details/5
         public ActionResult Details(int? id)
         {
@@ -130,7 +136,9 @@ namespace MiniQM.Admin.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
-            stockLocationService.Delete(id);
+            StockLocation stockLocation = Mapper.Map<StockLocation>(stockLocationService.Get(id));
+            stockLocation.IsDeleted = true;
+            stockLocationService.Update(stockLocation);
             return RedirectToAction("Index");
         }
 

@@ -14,6 +14,7 @@ using MiniQM.Service;
 
 namespace MiniQM.Admin.Controllers
 {
+    [Authorize]
     public class UserGroupsController : Controller
     {
         private readonly ILanguageService languageService;
@@ -123,7 +124,9 @@ namespace MiniQM.Admin.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
-            userGroupService.Delete(id);
+            UserGroup userGroup = Mapper.Map<UserGroup>(userGroupService.Get(id));
+            userGroup.IsDeleted = true;
+            userGroupService.Update(userGroup);
             return RedirectToAction("Index");
         }
 

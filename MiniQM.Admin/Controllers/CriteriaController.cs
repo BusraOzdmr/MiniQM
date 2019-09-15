@@ -14,6 +14,7 @@ using MiniQM.Service;
 
 namespace MiniQM.Admin.Controllers
 {
+    [Authorize]
     public class CriteriaController : Controller
     {
         private readonly ICertificateService certificateService;
@@ -150,7 +151,9 @@ namespace MiniQM.Admin.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
-            criterionService.Delete(id);
+            Criterion criterion = Mapper.Map<Criterion>(criterionService.Get(id));
+            criterion.IsDeleted = true;
+            criterionService.Update(criterion);
             return RedirectToAction("Index");
         }
         

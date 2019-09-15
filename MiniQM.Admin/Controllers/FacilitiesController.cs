@@ -14,6 +14,7 @@ using MiniQM.Service;
 
 namespace MiniQM.Admin.Controllers
 {
+    [Authorize]
     public class FacilitiesController : Controller
     {
         private readonly ICompanyService companyService;
@@ -126,7 +127,9 @@ namespace MiniQM.Admin.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
-            facilityService.Delete(id);
+            Facility facility = Mapper.Map<Facility>(facilityService.Get(id));
+            facility.IsDeleted = true;
+            facilityService.Update(facility);
             return RedirectToAction("Index");
         }
 

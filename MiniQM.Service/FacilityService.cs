@@ -39,7 +39,10 @@ namespace MiniQM.Service
         {
             return facilityRepository.GetAll();
         }
-
+        public IEnumerable<Facility> GetAllByCompanyId(int companyId)
+        {
+            return facilityRepository.GetAll(x => x.CompanyId == companyId, o => o.Name, false);
+        }
         public void Insert(Facility facility)
         {
             facilityRepository.Insert(facility);
@@ -56,6 +59,7 @@ namespace MiniQM.Service
     public interface IFacilityService
     {
         IEnumerable<Facility> GetAll();
+        IEnumerable<Facility> GetAllByCompanyId(int companyId);
         Facility Get(int id);
         void Insert(Facility facility);
         void Update(Facility facility);

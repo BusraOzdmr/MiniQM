@@ -14,6 +14,7 @@ using MiniQM.Service;
 
 namespace MiniQM.Admin.Controllers
 {
+
     public class CountriesController : Controller
     {
         private readonly ICountryService countryService;
@@ -119,7 +120,9 @@ namespace MiniQM.Admin.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
-            countryService.Delete(id);
+            Country country = Mapper.Map<Country>(countryService.Get(id));
+            country.IsDeleted = true;
+            countryService.Update(country);
             return RedirectToAction("Index");
         }
 

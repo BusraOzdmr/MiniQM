@@ -14,6 +14,7 @@ using MiniQM.Service;
 
 namespace MiniQM.Admin.Controllers
 {
+    [Authorize]
     public class LanguagesController : Controller
     {
         private readonly ILanguageService languageService;
@@ -117,7 +118,9 @@ namespace MiniQM.Admin.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
-            languageService.Delete(id);
+            Language language = Mapper.Map<Language>(languageService.Get(id));
+            language.IsDeleted = true;
+            languageService.Update(language);
             return RedirectToAction("Index");
         }
 

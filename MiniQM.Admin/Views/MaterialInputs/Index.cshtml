@@ -10,100 +10,104 @@
     <a href="@Url.Action("Create")" class="btn btn-primary">Yeni Malzeme Girişi</a>
 </p>
 <table class="table" id="myTable">
-    <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.MaterialName)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.OrderName)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.OrderTypeName)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.StockLocationName)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.SupplierName)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Cost)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.InputAmount)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.SampleAmount)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.MaterialQuality)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Returned)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Checked)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.QualityControlStatus)
-        </th>
-        
-        <th>
-            @Html.DisplayNameFor(model => model.IsActive)
-        </th>
-        
-        <th class="all">Eylemler</th>
-    </tr>
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.MaterialName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.OrderName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.OrderTypeName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.StockLocationName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.SupplierName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Cost)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.InputAmount)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.SampleAmount)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.MaterialQuality)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Returned)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Checked)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.QualityControlStatus)
+            </th>
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.MaterialName)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.OrderName)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.OrderTypeName)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.StockLocationName)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.SupplierName)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Cost)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.InputAmount)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.SampleAmount)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.MaterialQuality)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Returned)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Checked)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.QualityControlStatus)
-        </td>
-        
-        <td>
-            @Html.DisplayFor(modelItem => item.IsActive)
-        </td>
-        
-        <td class="text-nowrap">
-            @Html.ActionLink("Düzenle", "Edit", new { id=item.Id }) |
-            @Html.ActionLink("Detay", "Details", new { id=item.Id }) |
-            @Html.ActionLink("Sil", "Delete", new { id=item.Id })
-        </td>
-    </tr>
-}
+            <th>
+                @Html.DisplayNameFor(model => model.IsActive)
+            </th>
 
+            <th class="all">Eylemler</th>
+        </tr>
+    </thead>
+    <tbody>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.MaterialName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.OrderName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.OrderTypeName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.StockLocationName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.SupplierName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Cost)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.InputAmount)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.SampleAmount)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.MaterialQuality)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Returned)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Checked)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.QualityControlStatus)
+                </td>
+
+                <td>
+                    @Html.DisplayFor(modelItem => item.IsActive)
+                </td>
+
+                <td class="text-nowrap">
+                    @Html.ActionLink("Düzenle", "Edit", new { id = item.Id }) |
+                    @Html.ActionLink("Detay", "Details", new { id = item.Id }) |
+                    @Html.ActionLink("Sil", "Delete", new { id = item.Id })
+                </td>
+            </tr>
+        }
+    </tbody>
 </table>

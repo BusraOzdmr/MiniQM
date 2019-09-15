@@ -26,7 +26,7 @@
     <div class="form-group">
         @Html.LabelFor(model => model.CompanyId, "Firma", htmlAttributes: new { @class = "control-label col-md-2" })
         <div class="col-md-10">
-            @Html.DropDownList("CompanyId", null, "Firma Seç", htmlAttributes: new { @class = "form-control" })
+            @Html.DropDownList("CompanyId", null, "Firma Seç", htmlAttributes: new { @class = "form-control", onchange = "LoadFacilities(this)" })
             @Html.ValidationMessageFor(model => model.CompanyId, "", new { @class = "text-danger" })
         </div>
     </div>
@@ -81,4 +81,17 @@
 
 @section Scripts {
     @Scripts.Render("~/bundles/jqueryval")
+<script>
+    function LoadFacilities(companySelect) {
+            var selectedCompanyId = $(companySelect).val();
+            $("#FacilityId").empty();
+            $("#FacilityId").append('<option value="">Tesis seçiniz</option>');
+            $.post("@Url.Action("GetFacilities")", { companyId: selectedCompanyId }, function (data) {
+                $.each(data, function (index, value) {
+                    $("#FacilityId").append('<option value="' + value.Id + '">' + value.Name + '</option>');
+                });
+
+            });
+        }
+</script>
 }

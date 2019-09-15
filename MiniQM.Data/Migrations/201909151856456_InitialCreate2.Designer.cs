@@ -7,13 +7,13 @@ namespace MiniQM.Data.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.2.0-61023")]
-    public sealed partial class InitialCreate11 : IMigrationMetadata
+    public sealed partial class InitialCreate2 : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(InitialCreate11));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(InitialCreate2));
         
         string IMigrationMetadata.Id
         {
-            get { return "201909071640258_InitialCreate11"; }
+            get { return "201909151856456_InitialCreate2"; }
         }
         
         string IMigrationMetadata.Source

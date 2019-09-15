@@ -14,6 +14,7 @@ using MiniQM.Service;
 
 namespace MiniQM.Admin.Controllers
 {
+    [Authorize]
     public class SuppliersController : Controller
     {
         private readonly ISupplierService supplierService;
@@ -40,6 +41,12 @@ namespace MiniQM.Admin.Controllers
         }
 
         // GET: Suppliers/Details/5
+        [HttpPost]
+        public ActionResult GetCities(int countryId)
+        {
+            var cities = Mapper.Map<IEnumerable<CityViewModel>>(cityService.GetAllByCountryId(countryId));
+            return Json(cities);
+        }
         public ActionResult Details(int? id)
         {
             if (id == null)
@@ -148,7 +155,9 @@ namespace MiniQM.Admin.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
-            supplierService.Delete(id);
+            Supplier supplier = Mapper.Map<Supplier>(supplierService.Get(id));
+            supplier.IsDeleted = true;
+            supplierService.Update(supplier);
             return RedirectToAction("Index");
         }
 

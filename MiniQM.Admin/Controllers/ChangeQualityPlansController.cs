@@ -14,6 +14,7 @@ using MiniQM.Service;
 
 namespace MiniQM.Admin.Controllers
 {
+    [Authorize]
     public class ChangeQualityPlansController : Controller
     {
         private readonly IQualityPlanService qualityPlanService;
@@ -154,7 +155,9 @@ namespace MiniQM.Admin.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
-            changeQualityPlanService.Delete(id);
+            ChangeQualityPlan changeQualityPlan = Mapper.Map<ChangeQualityPlan>(changeQualityPlanService.Get(id));
+            changeQualityPlan.IsDeleted = true;
+            changeQualityPlanService.Update(changeQualityPlan);
             return RedirectToAction("Index");
         }
 

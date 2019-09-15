@@ -14,6 +14,7 @@ using MiniQM.Service;
 
 namespace MiniQM.Admin.Controllers
 {
+    [Authorize]
     public class MaterialInputsController : Controller
     {
         private readonly IMaterialInputService materialInputService;
@@ -148,7 +149,9 @@ namespace MiniQM.Admin.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
-            materialInputService.Delete(id);
+            MaterialInput materialInput = Mapper.Map<MaterialInput>(materialInputService.Get(id));
+            materialInput.IsDeleted = true;
+            materialInputService.Update(materialInput);
             return RedirectToAction("Index");
         }
 
